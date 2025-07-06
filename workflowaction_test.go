@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package paperlessnix_test
+package paperlessngx_test
 
 import (
 	"context"
@@ -22,41 +22,41 @@ func TestWorkflowActionNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.WorkflowActions.New(context.TODO(), paperlessnix.WorkflowActionNewParams{
-		WorkflowActionRequest: paperlessnix.WorkflowActionRequestParam{
-			ID:                       paperlessnix.Int(0),
+	_, err := client.WorkflowActions.New(context.TODO(), paperlessngx.WorkflowActionNewParams{
+		WorkflowActionRequest: paperlessngx.WorkflowActionRequestParam{
+			ID:                       paperlessngx.Int(0),
 			AssignChangeGroups:       []int64{0},
 			AssignChangeUsers:        []int64{0},
-			AssignCorrespondent:      paperlessnix.Int(0),
+			AssignCorrespondent:      paperlessngx.Int(0),
 			AssignCustomFields:       []int64{0},
 			AssignCustomFieldsValues: map[string]interface{}{},
-			AssignDocumentType:       paperlessnix.Int(0),
-			AssignOwner:              paperlessnix.Int(0),
-			AssignStoragePath:        paperlessnix.Int(0),
+			AssignDocumentType:       paperlessngx.Int(0),
+			AssignOwner:              paperlessngx.Int(0),
+			AssignStoragePath:        paperlessngx.Int(0),
 			AssignTags:               []int64{0},
-			AssignTitle:              paperlessnix.String("assign_title"),
+			AssignTitle:              paperlessngx.String("assign_title"),
 			AssignViewGroups:         []int64{0},
 			AssignViewUsers:          []int64{0},
-			Email: paperlessnix.WorkflowActionEmailParam{
+			Email: paperlessngx.WorkflowActionEmailParam{
 				Body:            "x",
 				Subject:         "x",
 				To:              "x",
-				ID:              paperlessnix.Int(0),
-				IncludeDocument: paperlessnix.Bool(true),
+				ID:              paperlessngx.Int(0),
+				IncludeDocument: paperlessngx.Bool(true),
 			},
-			RemoveAllCorrespondents: paperlessnix.Bool(true),
-			RemoveAllCustomFields:   paperlessnix.Bool(true),
-			RemoveAllDocumentTypes:  paperlessnix.Bool(true),
-			RemoveAllOwners:         paperlessnix.Bool(true),
-			RemoveAllPermissions:    paperlessnix.Bool(true),
-			RemoveAllStoragePaths:   paperlessnix.Bool(true),
-			RemoveAllTags:           paperlessnix.Bool(true),
+			RemoveAllCorrespondents: paperlessngx.Bool(true),
+			RemoveAllCustomFields:   paperlessngx.Bool(true),
+			RemoveAllDocumentTypes:  paperlessngx.Bool(true),
+			RemoveAllOwners:         paperlessngx.Bool(true),
+			RemoveAllPermissions:    paperlessngx.Bool(true),
+			RemoveAllStoragePaths:   paperlessngx.Bool(true),
+			RemoveAllTags:           paperlessngx.Bool(true),
 			RemoveChangeGroups:      []int64{0},
 			RemoveChangeUsers:       []int64{0},
 			RemoveCorrespondents:    []int64{0},
@@ -68,20 +68,20 @@ func TestWorkflowActionNewWithOptionalParams(t *testing.T) {
 			RemoveViewGroups:        []int64{0},
 			RemoveViewUsers:         []int64{0},
 			Type:                    1,
-			Webhook: paperlessnix.WorkflowActionWebhookParam{
+			Webhook: paperlessngx.WorkflowActionWebhookParam{
 				URL:             "x",
-				ID:              paperlessnix.Int(0),
-				AsJson:          paperlessnix.Bool(true),
-				Body:            paperlessnix.String("body"),
+				ID:              paperlessngx.Int(0),
+				AsJson:          paperlessngx.Bool(true),
+				Body:            paperlessngx.String("body"),
 				Headers:         map[string]interface{}{},
-				IncludeDocument: paperlessnix.Bool(true),
+				IncludeDocument: paperlessngx.Bool(true),
 				Params:          map[string]interface{}{},
-				UseParams:       paperlessnix.Bool(true),
+				UseParams:       paperlessngx.Bool(true),
 			},
 		},
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -98,7 +98,7 @@ func TestWorkflowActionGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -106,7 +106,7 @@ func TestWorkflowActionGet(t *testing.T) {
 	)
 	_, err := client.WorkflowActions.Get(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -123,7 +123,7 @@ func TestWorkflowActionUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -132,34 +132,34 @@ func TestWorkflowActionUpdateWithOptionalParams(t *testing.T) {
 	_, err := client.WorkflowActions.Update(
 		context.TODO(),
 		0,
-		paperlessnix.WorkflowActionUpdateParams{
-			ID:                       paperlessnix.Int(0),
+		paperlessngx.WorkflowActionUpdateParams{
+			ID:                       paperlessngx.Int(0),
 			AssignChangeGroups:       []int64{0},
 			AssignChangeUsers:        []int64{0},
-			AssignCorrespondent:      paperlessnix.Int(0),
+			AssignCorrespondent:      paperlessngx.Int(0),
 			AssignCustomFields:       []int64{0},
 			AssignCustomFieldsValues: map[string]interface{}{},
-			AssignDocumentType:       paperlessnix.Int(0),
-			AssignOwner:              paperlessnix.Int(0),
-			AssignStoragePath:        paperlessnix.Int(0),
+			AssignDocumentType:       paperlessngx.Int(0),
+			AssignOwner:              paperlessngx.Int(0),
+			AssignStoragePath:        paperlessngx.Int(0),
 			AssignTags:               []int64{0},
-			AssignTitle:              paperlessnix.String("assign_title"),
+			AssignTitle:              paperlessngx.String("assign_title"),
 			AssignViewGroups:         []int64{0},
 			AssignViewUsers:          []int64{0},
-			Email: paperlessnix.WorkflowActionEmailParam{
+			Email: paperlessngx.WorkflowActionEmailParam{
 				Body:            "x",
 				Subject:         "x",
 				To:              "x",
-				ID:              paperlessnix.Int(0),
-				IncludeDocument: paperlessnix.Bool(true),
+				ID:              paperlessngx.Int(0),
+				IncludeDocument: paperlessngx.Bool(true),
 			},
-			RemoveAllCorrespondents: paperlessnix.Bool(true),
-			RemoveAllCustomFields:   paperlessnix.Bool(true),
-			RemoveAllDocumentTypes:  paperlessnix.Bool(true),
-			RemoveAllOwners:         paperlessnix.Bool(true),
-			RemoveAllPermissions:    paperlessnix.Bool(true),
-			RemoveAllStoragePaths:   paperlessnix.Bool(true),
-			RemoveAllTags:           paperlessnix.Bool(true),
+			RemoveAllCorrespondents: paperlessngx.Bool(true),
+			RemoveAllCustomFields:   paperlessngx.Bool(true),
+			RemoveAllDocumentTypes:  paperlessngx.Bool(true),
+			RemoveAllOwners:         paperlessngx.Bool(true),
+			RemoveAllPermissions:    paperlessngx.Bool(true),
+			RemoveAllStoragePaths:   paperlessngx.Bool(true),
+			RemoveAllTags:           paperlessngx.Bool(true),
 			RemoveChangeGroups:      []int64{0},
 			RemoveChangeUsers:       []int64{0},
 			RemoveCorrespondents:    []int64{0},
@@ -171,20 +171,20 @@ func TestWorkflowActionUpdateWithOptionalParams(t *testing.T) {
 			RemoveViewGroups:        []int64{0},
 			RemoveViewUsers:         []int64{0},
 			Type:                    1,
-			Webhook: paperlessnix.WorkflowActionWebhookParam{
+			Webhook: paperlessngx.WorkflowActionWebhookParam{
 				URL:             "x",
-				ID:              paperlessnix.Int(0),
-				AsJson:          paperlessnix.Bool(true),
-				Body:            paperlessnix.String("body"),
+				ID:              paperlessngx.Int(0),
+				AsJson:          paperlessngx.Bool(true),
+				Body:            paperlessngx.String("body"),
 				Headers:         map[string]interface{}{},
-				IncludeDocument: paperlessnix.Bool(true),
+				IncludeDocument: paperlessngx.Bool(true),
 				Params:          map[string]interface{}{},
-				UseParams:       paperlessnix.Bool(true),
+				UseParams:       paperlessngx.Bool(true),
 			},
 		},
 	)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -201,18 +201,18 @@ func TestWorkflowActionListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.WorkflowActions.List(context.TODO(), paperlessnix.WorkflowActionListParams{
-		Page:     paperlessnix.Int(0),
-		PageSize: paperlessnix.Int(0),
+	_, err := client.WorkflowActions.List(context.TODO(), paperlessngx.WorkflowActionListParams{
+		Page:     paperlessngx.Int(0),
+		PageSize: paperlessngx.Int(0),
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -229,7 +229,7 @@ func TestWorkflowActionDelete(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -237,7 +237,7 @@ func TestWorkflowActionDelete(t *testing.T) {
 	)
 	err := client.WorkflowActions.Delete(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package paperlessnix_test
+package paperlessngx_test
 
 import (
 	"context"
@@ -22,20 +22,20 @@ func TestGroupNew(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Groups.New(context.TODO(), paperlessnix.GroupNewParams{
-		GroupRequest: paperlessnix.GroupRequestParam{
+	_, err := client.Groups.New(context.TODO(), paperlessngx.GroupNewParams{
+		GroupRequest: paperlessngx.GroupRequestParam{
 			Name:        "x",
 			Permissions: []string{"x"},
 		},
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -52,7 +52,7 @@ func TestGroupGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -60,7 +60,7 @@ func TestGroupGet(t *testing.T) {
 	)
 	_, err := client.Groups.Get(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -77,7 +77,7 @@ func TestGroupUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -86,13 +86,13 @@ func TestGroupUpdateWithOptionalParams(t *testing.T) {
 	_, err := client.Groups.Update(
 		context.TODO(),
 		0,
-		paperlessnix.GroupUpdateParams{
-			Name:        paperlessnix.String("x"),
+		paperlessngx.GroupUpdateParams{
+			Name:        paperlessngx.String("x"),
 			Permissions: []string{"x"},
 		},
 	)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -109,23 +109,23 @@ func TestGroupListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Groups.List(context.TODO(), paperlessnix.GroupListParams{
-		NameIcontains:   paperlessnix.String("name__icontains"),
-		NameIendswith:   paperlessnix.String("name__iendswith"),
-		NameIexact:      paperlessnix.String("name__iexact"),
-		NameIstartswith: paperlessnix.String("name__istartswith"),
-		Ordering:        paperlessnix.String("ordering"),
-		Page:            paperlessnix.Int(0),
-		PageSize:        paperlessnix.Int(0),
+	_, err := client.Groups.List(context.TODO(), paperlessngx.GroupListParams{
+		NameIcontains:   paperlessngx.String("name__icontains"),
+		NameIendswith:   paperlessngx.String("name__iendswith"),
+		NameIexact:      paperlessngx.String("name__iexact"),
+		NameIstartswith: paperlessngx.String("name__istartswith"),
+		Ordering:        paperlessngx.String("ordering"),
+		Page:            paperlessngx.Int(0),
+		PageSize:        paperlessngx.Int(0),
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -142,7 +142,7 @@ func TestGroupDelete(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -150,7 +150,7 @@ func TestGroupDelete(t *testing.T) {
 	)
 	err := client.Groups.Delete(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

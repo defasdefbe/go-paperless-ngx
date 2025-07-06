@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package paperlessnix
+package paperlessngx
 
 import (
 	"context"
@@ -18,7 +18,7 @@ import (
 )
 
 // WorkflowTriggerService contains methods and other services that help with
-// interacting with the paperless-nix API.
+// interacting with the paperless-ngx API.
 //
 // Note, unlike clients, this service does not read variables from the environment
 // automatically. You should not instantiate this service directly, and instead use

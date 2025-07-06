@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package paperlessnix_test
+package paperlessngx_test
 
 import (
 	"context"
@@ -23,21 +23,21 @@ func TestShareLinkNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.ShareLinks.New(context.TODO(), paperlessnix.ShareLinkNewParams{
-		ShareLinkRequest: paperlessnix.ShareLinkRequestParam{
-			Document:    paperlessnix.Int(0),
-			Expiration:  paperlessnix.Time(time.Now()),
-			FileVersion: paperlessnix.FileVersionEnumArchive,
+	_, err := client.ShareLinks.New(context.TODO(), paperlessngx.ShareLinkNewParams{
+		ShareLinkRequest: paperlessngx.ShareLinkRequestParam{
+			Document:    paperlessngx.Int(0),
+			Expiration:  paperlessngx.Time(time.Now()),
+			FileVersion: paperlessngx.FileVersionEnumArchive,
 		},
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -54,7 +54,7 @@ func TestShareLinkGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -62,7 +62,7 @@ func TestShareLinkGet(t *testing.T) {
 	)
 	_, err := client.ShareLinks.Get(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -79,7 +79,7 @@ func TestShareLinkUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -88,14 +88,14 @@ func TestShareLinkUpdateWithOptionalParams(t *testing.T) {
 	_, err := client.ShareLinks.Update(
 		context.TODO(),
 		0,
-		paperlessnix.ShareLinkUpdateParams{
-			Document:    paperlessnix.Int(0),
-			Expiration:  paperlessnix.Time(time.Now()),
-			FileVersion: paperlessnix.FileVersionEnumArchive,
+		paperlessngx.ShareLinkUpdateParams{
+			Document:    paperlessngx.Int(0),
+			Expiration:  paperlessngx.Time(time.Now()),
+			FileVersion: paperlessngx.FileVersionEnumArchive,
 		},
 	)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -112,41 +112,41 @@ func TestShareLinkListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.ShareLinks.List(context.TODO(), paperlessnix.ShareLinkListParams{
-		CreatedDateGt:     paperlessnix.Time(time.Now()),
-		CreatedDateGte:    paperlessnix.Time(time.Now()),
-		CreatedDateLt:     paperlessnix.Time(time.Now()),
-		CreatedDateLte:    paperlessnix.Time(time.Now()),
-		CreatedDay:        paperlessnix.Float(0),
-		CreatedGt:         paperlessnix.Time(time.Now()),
-		CreatedGte:        paperlessnix.Time(time.Now()),
-		CreatedLt:         paperlessnix.Time(time.Now()),
-		CreatedLte:        paperlessnix.Time(time.Now()),
-		CreatedMonth:      paperlessnix.Float(0),
-		CreatedYear:       paperlessnix.Float(0),
-		ExpirationDateGt:  paperlessnix.Time(time.Now()),
-		ExpirationDateGte: paperlessnix.Time(time.Now()),
-		ExpirationDateLt:  paperlessnix.Time(time.Now()),
-		ExpirationDateLte: paperlessnix.Time(time.Now()),
-		ExpirationDay:     paperlessnix.Float(0),
-		ExpirationGt:      paperlessnix.Time(time.Now()),
-		ExpirationGte:     paperlessnix.Time(time.Now()),
-		ExpirationLt:      paperlessnix.Time(time.Now()),
-		ExpirationLte:     paperlessnix.Time(time.Now()),
-		ExpirationMonth:   paperlessnix.Float(0),
-		ExpirationYear:    paperlessnix.Float(0),
-		Ordering:          paperlessnix.String("ordering"),
-		Page:              paperlessnix.Int(0),
-		PageSize:          paperlessnix.Int(0),
+	_, err := client.ShareLinks.List(context.TODO(), paperlessngx.ShareLinkListParams{
+		CreatedDateGt:     paperlessngx.Time(time.Now()),
+		CreatedDateGte:    paperlessngx.Time(time.Now()),
+		CreatedDateLt:     paperlessngx.Time(time.Now()),
+		CreatedDateLte:    paperlessngx.Time(time.Now()),
+		CreatedDay:        paperlessngx.Float(0),
+		CreatedGt:         paperlessngx.Time(time.Now()),
+		CreatedGte:        paperlessngx.Time(time.Now()),
+		CreatedLt:         paperlessngx.Time(time.Now()),
+		CreatedLte:        paperlessngx.Time(time.Now()),
+		CreatedMonth:      paperlessngx.Float(0),
+		CreatedYear:       paperlessngx.Float(0),
+		ExpirationDateGt:  paperlessngx.Time(time.Now()),
+		ExpirationDateGte: paperlessngx.Time(time.Now()),
+		ExpirationDateLt:  paperlessngx.Time(time.Now()),
+		ExpirationDateLte: paperlessngx.Time(time.Now()),
+		ExpirationDay:     paperlessngx.Float(0),
+		ExpirationGt:      paperlessngx.Time(time.Now()),
+		ExpirationGte:     paperlessngx.Time(time.Now()),
+		ExpirationLt:      paperlessngx.Time(time.Now()),
+		ExpirationLte:     paperlessngx.Time(time.Now()),
+		ExpirationMonth:   paperlessngx.Float(0),
+		ExpirationYear:    paperlessngx.Float(0),
+		Ordering:          paperlessngx.String("ordering"),
+		Page:              paperlessngx.Int(0),
+		PageSize:          paperlessngx.Int(0),
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -163,7 +163,7 @@ func TestShareLinkDelete(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -171,7 +171,7 @@ func TestShareLinkDelete(t *testing.T) {
 	)
 	err := client.ShareLinks.Delete(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

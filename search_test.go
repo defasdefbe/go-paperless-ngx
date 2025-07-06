@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package paperlessnix_test
+package paperlessngx_test
 
 import (
 	"context"
@@ -22,18 +22,18 @@ func TestSearchGetWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Search.Get(context.TODO(), paperlessnix.SearchGetParams{
+	_, err := client.Search.Get(context.TODO(), paperlessngx.SearchGetParams{
 		Query:  "query",
-		DBOnly: paperlessnix.Bool(true),
+		DBOnly: paperlessngx.Bool(true),
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -50,18 +50,18 @@ func TestSearchListTagsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Search.ListTags(context.TODO(), paperlessnix.SearchListTagsParams{
-		Limit: paperlessnix.Int(0),
-		Term:  paperlessnix.String("term"),
+	_, err := client.Search.ListTags(context.TODO(), paperlessngx.SearchListTagsParams{
+		Limit: paperlessngx.Int(0),
+		Term:  paperlessngx.String("term"),
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package paperlessnix_test
+package paperlessngx_test
 
 import (
 	"context"
@@ -20,16 +20,16 @@ func TestUsage(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	bulkEditObject, err := client.BulkEditObjects.New(context.TODO(), paperlessnix.BulkEditObjectNewParams{
-		ObjectType: paperlessnix.BulkEditObjectNewParamsObjectTypeTags,
+	bulkEditObject, err := client.BulkEditObjects.New(context.TODO(), paperlessngx.BulkEditObjectNewParams{
+		ObjectType: paperlessngx.BulkEditObjectNewParamsObjectTypeTags,
 		Objects:    []int64{0},
-		Operation:  paperlessnix.BulkEditObjectNewParamsOperationSetPermissions,
+		Operation:  paperlessngx.BulkEditObjectNewParamsOperationSetPermissions,
 	})
 	if err != nil {
 		t.Fatalf("err should be nil: %s", err.Error())

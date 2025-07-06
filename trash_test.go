@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package paperlessnix_test
+package paperlessngx_test
 
 import (
 	"context"
@@ -22,18 +22,18 @@ func TestTrashNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	err := client.Trash.New(context.TODO(), paperlessnix.TrashNewParams{
-		Action:    paperlessnix.TrashNewParamsActionRestore,
+	err := client.Trash.New(context.TODO(), paperlessngx.TrashNewParams{
+		Action:    paperlessngx.TrashNewParamsActionRestore,
 		Documents: []int64{0},
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -50,18 +50,18 @@ func TestTrashListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	err := client.Trash.List(context.TODO(), paperlessnix.TrashListParams{
-		Page:     paperlessnix.Int(0),
-		PageSize: paperlessnix.Int(0),
+	err := client.Trash.List(context.TODO(), paperlessngx.TrashListParams{
+		Page:     paperlessngx.Int(0),
+		PageSize: paperlessngx.Int(0),
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

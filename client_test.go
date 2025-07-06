@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package paperlessnix_test
+package paperlessngx_test
 
 import (
 	"context"
@@ -25,7 +25,7 @@ func (t *closureTransport) RoundTrip(req *http.Request) (*http.Response, error) 
 
 func TestUserAgentHeader(t *testing.T) {
 	var userAgent string
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
@@ -40,19 +40,19 @@ func TestUserAgentHeader(t *testing.T) {
 			},
 		}),
 	)
-	client.BulkEditObjects.New(context.Background(), paperlessnix.BulkEditObjectNewParams{
-		ObjectType: paperlessnix.BulkEditObjectNewParamsObjectTypeTags,
+	client.BulkEditObjects.New(context.Background(), paperlessngx.BulkEditObjectNewParams{
+		ObjectType: paperlessngx.BulkEditObjectNewParamsObjectTypeTags,
 		Objects:    []int64{0},
-		Operation:  paperlessnix.BulkEditObjectNewParamsOperationSetPermissions,
+		Operation:  paperlessngx.BulkEditObjectNewParamsOperationSetPermissions,
 	})
-	if userAgent != fmt.Sprintf("PaperlessNix/Go %s", internal.PackageVersion) {
+	if userAgent != fmt.Sprintf("PaperlessNgx/Go %s", internal.PackageVersion) {
 		t.Errorf("Expected User-Agent to be correct, but got: %#v", userAgent)
 	}
 }
 
 func TestRetryAfter(t *testing.T) {
 	retryCountHeaders := make([]string, 0)
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
@@ -70,10 +70,10 @@ func TestRetryAfter(t *testing.T) {
 			},
 		}),
 	)
-	_, err := client.BulkEditObjects.New(context.Background(), paperlessnix.BulkEditObjectNewParams{
-		ObjectType: paperlessnix.BulkEditObjectNewParamsObjectTypeTags,
+	_, err := client.BulkEditObjects.New(context.Background(), paperlessngx.BulkEditObjectNewParams{
+		ObjectType: paperlessngx.BulkEditObjectNewParamsObjectTypeTags,
 		Objects:    []int64{0},
-		Operation:  paperlessnix.BulkEditObjectNewParamsOperationSetPermissions,
+		Operation:  paperlessngx.BulkEditObjectNewParamsOperationSetPermissions,
 	})
 	if err == nil {
 		t.Error("Expected there to be a cancel error")
@@ -92,7 +92,7 @@ func TestRetryAfter(t *testing.T) {
 
 func TestDeleteRetryCountHeader(t *testing.T) {
 	retryCountHeaders := make([]string, 0)
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
@@ -111,10 +111,10 @@ func TestDeleteRetryCountHeader(t *testing.T) {
 		}),
 		option.WithHeaderDel("X-Stainless-Retry-Count"),
 	)
-	_, err := client.BulkEditObjects.New(context.Background(), paperlessnix.BulkEditObjectNewParams{
-		ObjectType: paperlessnix.BulkEditObjectNewParamsObjectTypeTags,
+	_, err := client.BulkEditObjects.New(context.Background(), paperlessngx.BulkEditObjectNewParams{
+		ObjectType: paperlessngx.BulkEditObjectNewParamsObjectTypeTags,
 		Objects:    []int64{0},
-		Operation:  paperlessnix.BulkEditObjectNewParamsOperationSetPermissions,
+		Operation:  paperlessngx.BulkEditObjectNewParamsOperationSetPermissions,
 	})
 	if err == nil {
 		t.Error("Expected there to be a cancel error")
@@ -128,7 +128,7 @@ func TestDeleteRetryCountHeader(t *testing.T) {
 
 func TestOverwriteRetryCountHeader(t *testing.T) {
 	retryCountHeaders := make([]string, 0)
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
@@ -147,10 +147,10 @@ func TestOverwriteRetryCountHeader(t *testing.T) {
 		}),
 		option.WithHeader("X-Stainless-Retry-Count", "42"),
 	)
-	_, err := client.BulkEditObjects.New(context.Background(), paperlessnix.BulkEditObjectNewParams{
-		ObjectType: paperlessnix.BulkEditObjectNewParamsObjectTypeTags,
+	_, err := client.BulkEditObjects.New(context.Background(), paperlessngx.BulkEditObjectNewParams{
+		ObjectType: paperlessngx.BulkEditObjectNewParamsObjectTypeTags,
 		Objects:    []int64{0},
-		Operation:  paperlessnix.BulkEditObjectNewParamsOperationSetPermissions,
+		Operation:  paperlessngx.BulkEditObjectNewParamsOperationSetPermissions,
 	})
 	if err == nil {
 		t.Error("Expected there to be a cancel error")
@@ -164,7 +164,7 @@ func TestOverwriteRetryCountHeader(t *testing.T) {
 
 func TestRetryAfterMs(t *testing.T) {
 	attempts := 0
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
@@ -182,10 +182,10 @@ func TestRetryAfterMs(t *testing.T) {
 			},
 		}),
 	)
-	_, err := client.BulkEditObjects.New(context.Background(), paperlessnix.BulkEditObjectNewParams{
-		ObjectType: paperlessnix.BulkEditObjectNewParamsObjectTypeTags,
+	_, err := client.BulkEditObjects.New(context.Background(), paperlessngx.BulkEditObjectNewParams{
+		ObjectType: paperlessngx.BulkEditObjectNewParamsObjectTypeTags,
 		Objects:    []int64{0},
-		Operation:  paperlessnix.BulkEditObjectNewParamsOperationSetPermissions,
+		Operation:  paperlessngx.BulkEditObjectNewParamsOperationSetPermissions,
 	})
 	if err == nil {
 		t.Error("Expected there to be a cancel error")
@@ -196,7 +196,7 @@ func TestRetryAfterMs(t *testing.T) {
 }
 
 func TestContextCancel(t *testing.T) {
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
@@ -211,10 +211,10 @@ func TestContextCancel(t *testing.T) {
 	)
 	cancelCtx, cancel := context.WithCancel(context.Background())
 	cancel()
-	_, err := client.BulkEditObjects.New(cancelCtx, paperlessnix.BulkEditObjectNewParams{
-		ObjectType: paperlessnix.BulkEditObjectNewParamsObjectTypeTags,
+	_, err := client.BulkEditObjects.New(cancelCtx, paperlessngx.BulkEditObjectNewParams{
+		ObjectType: paperlessngx.BulkEditObjectNewParamsObjectTypeTags,
 		Objects:    []int64{0},
-		Operation:  paperlessnix.BulkEditObjectNewParamsOperationSetPermissions,
+		Operation:  paperlessngx.BulkEditObjectNewParamsOperationSetPermissions,
 	})
 	if err == nil {
 		t.Error("Expected there to be a cancel error")
@@ -222,7 +222,7 @@ func TestContextCancel(t *testing.T) {
 }
 
 func TestContextCancelDelay(t *testing.T) {
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
@@ -237,10 +237,10 @@ func TestContextCancelDelay(t *testing.T) {
 	)
 	cancelCtx, cancel := context.WithTimeout(context.Background(), 2*time.Millisecond)
 	defer cancel()
-	_, err := client.BulkEditObjects.New(cancelCtx, paperlessnix.BulkEditObjectNewParams{
-		ObjectType: paperlessnix.BulkEditObjectNewParamsObjectTypeTags,
+	_, err := client.BulkEditObjects.New(cancelCtx, paperlessngx.BulkEditObjectNewParams{
+		ObjectType: paperlessngx.BulkEditObjectNewParamsObjectTypeTags,
 		Objects:    []int64{0},
-		Operation:  paperlessnix.BulkEditObjectNewParamsOperationSetPermissions,
+		Operation:  paperlessngx.BulkEditObjectNewParamsOperationSetPermissions,
 	})
 	if err == nil {
 		t.Error("expected there to be a cancel error")
@@ -256,7 +256,7 @@ func TestContextDeadline(t *testing.T) {
 	defer cancel()
 
 	go func() {
-		client := paperlessnix.NewClient(
+		client := paperlessngx.NewClient(
 			option.WithUsername("My Username"),
 			option.WithPassword("My Password"),
 			option.WithAPIKey("My API Key"),
@@ -269,10 +269,10 @@ func TestContextDeadline(t *testing.T) {
 				},
 			}),
 		)
-		_, err := client.BulkEditObjects.New(deadlineCtx, paperlessnix.BulkEditObjectNewParams{
-			ObjectType: paperlessnix.BulkEditObjectNewParamsObjectTypeTags,
+		_, err := client.BulkEditObjects.New(deadlineCtx, paperlessngx.BulkEditObjectNewParams{
+			ObjectType: paperlessngx.BulkEditObjectNewParamsObjectTypeTags,
 			Objects:    []int64{0},
-			Operation:  paperlessnix.BulkEditObjectNewParamsOperationSetPermissions,
+			Operation:  paperlessngx.BulkEditObjectNewParamsOperationSetPermissions,
 		})
 		if err == nil {
 			t.Error("expected there to be a deadline error")

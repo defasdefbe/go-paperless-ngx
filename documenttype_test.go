@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package paperlessnix_test
+package paperlessngx_test
 
 import (
 	"context"
@@ -22,25 +22,25 @@ func TestDocumentTypeNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.DocumentTypes.New(context.TODO(), paperlessnix.DocumentTypeNewParams{
-		DocumentTypeRequest: paperlessnix.DocumentTypeRequestParam{
+	_, err := client.DocumentTypes.New(context.TODO(), paperlessngx.DocumentTypeNewParams{
+		DocumentTypeRequest: paperlessngx.DocumentTypeRequestParam{
 			Name:              "x",
-			IsInsensitive:     paperlessnix.Bool(true),
-			Match:             paperlessnix.String("match"),
+			IsInsensitive:     paperlessngx.Bool(true),
+			Match:             paperlessngx.String("match"),
 			MatchingAlgorithm: 0,
-			Owner:             paperlessnix.Int(0),
-			SetPermissions: paperlessnix.DocumentTypeRequestSetPermissionsParam{
-				Change: paperlessnix.DocumentTypeRequestSetPermissionsChangeParam{
+			Owner:             paperlessngx.Int(0),
+			SetPermissions: paperlessngx.DocumentTypeRequestSetPermissionsParam{
+				Change: paperlessngx.DocumentTypeRequestSetPermissionsChangeParam{
 					Groups: []int64{0},
 					Users:  []int64{0},
 				},
-				View: paperlessnix.DocumentTypeRequestSetPermissionsViewParam{
+				View: paperlessngx.DocumentTypeRequestSetPermissionsViewParam{
 					Groups: []int64{0},
 					Users:  []int64{0},
 				},
@@ -48,7 +48,7 @@ func TestDocumentTypeNewWithOptionalParams(t *testing.T) {
 		},
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -65,7 +65,7 @@ func TestDocumentTypeGetWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -74,12 +74,12 @@ func TestDocumentTypeGetWithOptionalParams(t *testing.T) {
 	_, err := client.DocumentTypes.Get(
 		context.TODO(),
 		0,
-		paperlessnix.DocumentTypeGetParams{
-			FullPerms: paperlessnix.Bool(true),
+		paperlessngx.DocumentTypeGetParams{
+			FullPerms: paperlessngx.Bool(true),
 		},
 	)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -96,7 +96,7 @@ func TestDocumentTypeUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -105,18 +105,18 @@ func TestDocumentTypeUpdateWithOptionalParams(t *testing.T) {
 	_, err := client.DocumentTypes.Update(
 		context.TODO(),
 		0,
-		paperlessnix.DocumentTypeUpdateParams{
-			IsInsensitive:     paperlessnix.Bool(true),
-			Match:             paperlessnix.String("match"),
+		paperlessngx.DocumentTypeUpdateParams{
+			IsInsensitive:     paperlessngx.Bool(true),
+			Match:             paperlessngx.String("match"),
 			MatchingAlgorithm: 0,
-			Name:              paperlessnix.String("x"),
-			Owner:             paperlessnix.Int(0),
-			SetPermissions: paperlessnix.DocumentTypeUpdateParamsSetPermissions{
-				Change: paperlessnix.DocumentTypeUpdateParamsSetPermissionsChange{
+			Name:              paperlessngx.String("x"),
+			Owner:             paperlessngx.Int(0),
+			SetPermissions: paperlessngx.DocumentTypeUpdateParamsSetPermissions{
+				Change: paperlessngx.DocumentTypeUpdateParamsSetPermissionsChange{
 					Groups: []int64{0},
 					Users:  []int64{0},
 				},
-				View: paperlessnix.DocumentTypeUpdateParamsSetPermissionsView{
+				View: paperlessngx.DocumentTypeUpdateParamsSetPermissionsView{
 					Groups: []int64{0},
 					Users:  []int64{0},
 				},
@@ -124,7 +124,7 @@ func TestDocumentTypeUpdateWithOptionalParams(t *testing.T) {
 		},
 	)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -141,26 +141,26 @@ func TestDocumentTypeListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.DocumentTypes.List(context.TODO(), paperlessnix.DocumentTypeListParams{
-		ID:              paperlessnix.Int(0),
-		FullPerms:       paperlessnix.Bool(true),
+	_, err := client.DocumentTypes.List(context.TODO(), paperlessngx.DocumentTypeListParams{
+		ID:              paperlessngx.Int(0),
+		FullPerms:       paperlessngx.Bool(true),
 		IDIn:            []int64{0},
-		NameIcontains:   paperlessnix.String("name__icontains"),
-		NameIendswith:   paperlessnix.String("name__iendswith"),
-		NameIexact:      paperlessnix.String("name__iexact"),
-		NameIstartswith: paperlessnix.String("name__istartswith"),
-		Ordering:        paperlessnix.String("ordering"),
-		Page:            paperlessnix.Int(0),
-		PageSize:        paperlessnix.Int(0),
+		NameIcontains:   paperlessngx.String("name__icontains"),
+		NameIendswith:   paperlessngx.String("name__iendswith"),
+		NameIexact:      paperlessngx.String("name__iexact"),
+		NameIstartswith: paperlessngx.String("name__istartswith"),
+		Ordering:        paperlessngx.String("ordering"),
+		Page:            paperlessngx.Int(0),
+		PageSize:        paperlessngx.Int(0),
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -177,7 +177,7 @@ func TestDocumentTypeDelete(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -185,7 +185,7 @@ func TestDocumentTypeDelete(t *testing.T) {
 	)
 	err := client.DocumentTypes.Delete(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

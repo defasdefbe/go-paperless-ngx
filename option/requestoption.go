@@ -16,7 +16,7 @@ import (
 	"github.com/tidwall/sjson"
 )
 
-// RequestOption is an option for the requests made by the paperless-nix API Client
+// RequestOption is an option for the requests made by the paperless-ngx API Client
 // which can be supplied to clients, services, and methods. You can read more about this functional
 // options pattern in our [README].
 //
