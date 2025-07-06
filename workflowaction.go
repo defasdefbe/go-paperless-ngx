@@ -9,12 +9,12 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/stainless-sdks/paperless-nix-go/internal/apijson"
-	"github.com/stainless-sdks/paperless-nix-go/internal/apiquery"
-	"github.com/stainless-sdks/paperless-nix-go/internal/requestconfig"
-	"github.com/stainless-sdks/paperless-nix-go/option"
-	"github.com/stainless-sdks/paperless-nix-go/packages/param"
-	"github.com/stainless-sdks/paperless-nix-go/packages/respjson"
+	"github.com/defasdefbe/go-paperless-ngx/internal/apijson"
+	"github.com/defasdefbe/go-paperless-ngx/internal/apiquery"
+	"github.com/defasdefbe/go-paperless-ngx/internal/requestconfig"
+	"github.com/defasdefbe/go-paperless-ngx/option"
+	"github.com/defasdefbe/go-paperless-ngx/packages/param"
+	"github.com/defasdefbe/go-paperless-ngx/packages/respjson"
 )
 
 // WorkflowActionService contains methods and other services that help with

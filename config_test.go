@@ -10,9 +10,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/paperless-nix-go"
-	"github.com/stainless-sdks/paperless-nix-go/internal/testutil"
-	"github.com/stainless-sdks/paperless-nix-go/option"
+	"github.com/defasdefbe/go-paperless-ngx"
+	"github.com/defasdefbe/go-paperless-ngx/internal/testutil"
+	"github.com/defasdefbe/go-paperless-ngx/option"
 )
 
 func TestConfigGet(t *testing.T) {

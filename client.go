@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/stainless-sdks/paperless-nix-go/internal/requestconfig"
-	"github.com/stainless-sdks/paperless-nix-go/option"
+	"github.com/defasdefbe/go-paperless-ngx/internal/requestconfig"
+	"github.com/defasdefbe/go-paperless-ngx/option"
 )
 
 // Client creates a struct with services and top level methods that help with

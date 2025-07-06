@@ -13,7 +13,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/stainless-sdks/paperless-nix-go/packages/param"
+	"github.com/defasdefbe/go-paperless-ngx/packages/param"
 )
 
 var encoders sync.Map // map[encoderEntry]encoderFunc

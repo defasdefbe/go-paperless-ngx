@@ -18,10 +18,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/stainless-sdks/paperless-nix-go/internal"
-	"github.com/stainless-sdks/paperless-nix-go/internal/apierror"
-	"github.com/stainless-sdks/paperless-nix-go/internal/apiform"
-	"github.com/stainless-sdks/paperless-nix-go/internal/apiquery"
+	"github.com/defasdefbe/go-paperless-ngx/internal"
+	"github.com/defasdefbe/go-paperless-ngx/internal/apierror"
+	"github.com/defasdefbe/go-paperless-ngx/internal/apiform"
+	"github.com/defasdefbe/go-paperless-ngx/internal/apiquery"
 )
 
 func getDefaultHeaders() map[string]string {

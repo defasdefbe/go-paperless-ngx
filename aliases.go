@@ -3,8 +3,8 @@
 package paperlessngx
 
 import (
-	"github.com/stainless-sdks/paperless-nix-go/internal/apierror"
-	"github.com/stainless-sdks/paperless-nix-go/packages/param"
+	"github.com/defasdefbe/go-paperless-ngx/internal/apierror"
+	"github.com/defasdefbe/go-paperless-ngx/packages/param"
 )
 
 // aliased to make [param.APIUnion] private when embedding

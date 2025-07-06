@@ -2,8 +2,8 @@ package apijson_test
 
 import (
 	"encoding/json"
-	"github.com/stainless-sdks/paperless-nix-go/internal/apijson"
-	"github.com/stainless-sdks/paperless-nix-go/packages/respjson"
+	"github.com/defasdefbe/go-paperless-ngx/internal/apijson"
+	"github.com/defasdefbe/go-paperless-ngx/packages/respjson"
 	"testing"
 )
 

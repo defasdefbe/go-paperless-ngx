@@ -1,8 +1,8 @@
 package paramutil
 
 import (
-	"github.com/stainless-sdks/paperless-nix-go/packages/param"
-	"github.com/stainless-sdks/paperless-nix-go/packages/respjson"
+	"github.com/defasdefbe/go-paperless-ngx/packages/param"
+	"github.com/defasdefbe/go-paperless-ngx/packages/respjson"
 )
 
 func AddrIfPresent[T comparable](v param.Opt[T]) *T {
