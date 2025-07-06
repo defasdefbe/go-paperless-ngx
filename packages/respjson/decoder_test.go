@@ -3,8 +3,8 @@ package respjson_test
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/stainless-sdks/paperless-nix-go/internal/apijson"
-	rj "github.com/stainless-sdks/paperless-nix-go/packages/respjson"
+	"github.com/defasdefbe/go-paperless-ngx/internal/apijson"
+	rj "github.com/defasdefbe/go-paperless-ngx/packages/respjson"
 	"reflect"
 	"testing"
 )

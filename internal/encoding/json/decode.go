@@ -14,7 +14,7 @@ import (
 	"encoding"
 	"encoding/base64"
 	"fmt"
-	"github.com/stainless-sdks/paperless-nix-go/internal/encoding/json/shims"
+	"github.com/defasdefbe/go-paperless-ngx/internal/encoding/json/shims"
 	"reflect"
 	"strconv"
 	"strings"

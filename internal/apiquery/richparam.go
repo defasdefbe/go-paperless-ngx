@@ -1,7 +1,7 @@
 package apiquery
 
 import (
-	"github.com/stainless-sdks/paperless-nix-go/packages/param"
+	"github.com/defasdefbe/go-paperless-ngx/packages/param"
 	"reflect"
 )
 

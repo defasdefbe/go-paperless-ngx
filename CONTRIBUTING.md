@@ -41,7 +41,7 @@ To use a local version of this library from source in another project, edit the 
 directive. This can be done through the CLI with the following:
 
 ```sh
-$ go mod edit -replace github.com/stainless-sdks/paperless-nix-go=/path/to/paperless-nix-go
+$ go mod edit -replace github.com/defasdefbe/go-paperless-ngx=/path/to/go-paperless-ngx
 ```
 
 ## Running tests

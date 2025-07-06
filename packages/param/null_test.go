@@ -2,7 +2,7 @@ package param_test
 
 import (
 	"encoding/json"
-	"github.com/stainless-sdks/paperless-nix-go/packages/param"
+	"github.com/defasdefbe/go-paperless-ngx/packages/param"
 	"testing"
 )
 

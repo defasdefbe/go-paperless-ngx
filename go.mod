@@ -1,4 +1,4 @@
-module github.com/stainless-sdks/paperless-nix-go
+module github.com/defasdefbe/go-paperless-ngx
 
 go 1.21
 

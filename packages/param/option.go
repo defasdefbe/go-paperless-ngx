@@ -3,7 +3,7 @@ package param
 import (
 	"encoding/json"
 	"fmt"
-	shimjson "github.com/stainless-sdks/paperless-nix-go/internal/encoding/json"
+	shimjson "github.com/defasdefbe/go-paperless-ngx/internal/encoding/json"
 	"time"
 )
 

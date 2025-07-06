@@ -1,7 +1,7 @@
 package apijson
 
 import (
-	"github.com/stainless-sdks/paperless-nix-go/packages/respjson"
+	"github.com/defasdefbe/go-paperless-ngx/packages/respjson"
 	"reflect"
 )
 
