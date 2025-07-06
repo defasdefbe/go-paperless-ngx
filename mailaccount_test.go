@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package paperlessnix_test
+package paperlessngx_test
 
 import (
 	"context"
@@ -23,31 +23,31 @@ func TestMailAccountNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.MailAccounts.New(context.TODO(), paperlessnix.MailAccountNewParams{
-		MailAccountRequest: paperlessnix.MailAccountRequestParam{
+	_, err := client.MailAccounts.New(context.TODO(), paperlessngx.MailAccountNewParams{
+		MailAccountRequest: paperlessngx.MailAccountRequestParam{
 			ImapServer:   "x",
 			Name:         "x",
 			Password:     "x",
 			Username:     "x",
 			AccountType:  1,
-			CharacterSet: paperlessnix.String("x"),
-			Expiration:   paperlessnix.Time(time.Now()),
-			ImapPort:     paperlessnix.Int(-9007199254740991),
+			CharacterSet: paperlessngx.String("x"),
+			Expiration:   paperlessngx.Time(time.Now()),
+			ImapPort:     paperlessngx.Int(-9007199254740991),
 			ImapSecurity: 1,
-			IsToken:      paperlessnix.Bool(true),
-			Owner:        paperlessnix.Int(0),
-			SetPermissions: paperlessnix.MailAccountRequestSetPermissionsParam{
-				Change: paperlessnix.MailAccountRequestSetPermissionsChangeParam{
+			IsToken:      paperlessngx.Bool(true),
+			Owner:        paperlessngx.Int(0),
+			SetPermissions: paperlessngx.MailAccountRequestSetPermissionsParam{
+				Change: paperlessngx.MailAccountRequestSetPermissionsChangeParam{
 					Groups: []int64{0},
 					Users:  []int64{0},
 				},
-				View: paperlessnix.MailAccountRequestSetPermissionsViewParam{
+				View: paperlessngx.MailAccountRequestSetPermissionsViewParam{
 					Groups: []int64{0},
 					Users:  []int64{0},
 				},
@@ -55,7 +55,7 @@ func TestMailAccountNewWithOptionalParams(t *testing.T) {
 		},
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -72,7 +72,7 @@ func TestMailAccountGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -80,7 +80,7 @@ func TestMailAccountGet(t *testing.T) {
 	)
 	_, err := client.MailAccounts.Get(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -97,7 +97,7 @@ func TestMailAccountUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -106,32 +106,32 @@ func TestMailAccountUpdateWithOptionalParams(t *testing.T) {
 	_, err := client.MailAccounts.Update(
 		context.TODO(),
 		0,
-		paperlessnix.MailAccountUpdateParams{
+		paperlessngx.MailAccountUpdateParams{
 			AccountType:  1,
-			CharacterSet: paperlessnix.String("x"),
-			Expiration:   paperlessnix.Time(time.Now()),
-			ImapPort:     paperlessnix.Int(-9007199254740991),
+			CharacterSet: paperlessngx.String("x"),
+			Expiration:   paperlessngx.Time(time.Now()),
+			ImapPort:     paperlessngx.Int(-9007199254740991),
 			ImapSecurity: 1,
-			ImapServer:   paperlessnix.String("x"),
-			IsToken:      paperlessnix.Bool(true),
-			Name:         paperlessnix.String("x"),
-			Owner:        paperlessnix.Int(0),
-			Password:     paperlessnix.String("x"),
-			SetPermissions: paperlessnix.MailAccountUpdateParamsSetPermissions{
-				Change: paperlessnix.MailAccountUpdateParamsSetPermissionsChange{
+			ImapServer:   paperlessngx.String("x"),
+			IsToken:      paperlessngx.Bool(true),
+			Name:         paperlessngx.String("x"),
+			Owner:        paperlessngx.Int(0),
+			Password:     paperlessngx.String("x"),
+			SetPermissions: paperlessngx.MailAccountUpdateParamsSetPermissions{
+				Change: paperlessngx.MailAccountUpdateParamsSetPermissionsChange{
 					Groups: []int64{0},
 					Users:  []int64{0},
 				},
-				View: paperlessnix.MailAccountUpdateParamsSetPermissionsView{
+				View: paperlessngx.MailAccountUpdateParamsSetPermissionsView{
 					Groups: []int64{0},
 					Users:  []int64{0},
 				},
 			},
-			Username: paperlessnix.String("x"),
+			Username: paperlessngx.String("x"),
 		},
 	)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -148,18 +148,18 @@ func TestMailAccountListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.MailAccounts.List(context.TODO(), paperlessnix.MailAccountListParams{
-		Page:     paperlessnix.Int(0),
-		PageSize: paperlessnix.Int(0),
+	_, err := client.MailAccounts.List(context.TODO(), paperlessngx.MailAccountListParams{
+		Page:     paperlessngx.Int(0),
+		PageSize: paperlessngx.Int(0),
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -176,7 +176,7 @@ func TestMailAccountDelete(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -184,7 +184,7 @@ func TestMailAccountDelete(t *testing.T) {
 	)
 	err := client.MailAccounts.Delete(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -201,7 +201,7 @@ func TestMailAccountProcessWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -210,25 +210,25 @@ func TestMailAccountProcessWithOptionalParams(t *testing.T) {
 	_, err := client.MailAccounts.Process(
 		context.TODO(),
 		0,
-		paperlessnix.MailAccountProcessParams{
-			MailAccountRequest: paperlessnix.MailAccountRequestParam{
+		paperlessngx.MailAccountProcessParams{
+			MailAccountRequest: paperlessngx.MailAccountRequestParam{
 				ImapServer:   "x",
 				Name:         "x",
 				Password:     "x",
 				Username:     "x",
 				AccountType:  1,
-				CharacterSet: paperlessnix.String("x"),
-				Expiration:   paperlessnix.Time(time.Now()),
-				ImapPort:     paperlessnix.Int(-9007199254740991),
+				CharacterSet: paperlessngx.String("x"),
+				Expiration:   paperlessngx.Time(time.Now()),
+				ImapPort:     paperlessngx.Int(-9007199254740991),
 				ImapSecurity: 1,
-				IsToken:      paperlessnix.Bool(true),
-				Owner:        paperlessnix.Int(0),
-				SetPermissions: paperlessnix.MailAccountRequestSetPermissionsParam{
-					Change: paperlessnix.MailAccountRequestSetPermissionsChangeParam{
+				IsToken:      paperlessngx.Bool(true),
+				Owner:        paperlessngx.Int(0),
+				SetPermissions: paperlessngx.MailAccountRequestSetPermissionsParam{
+					Change: paperlessngx.MailAccountRequestSetPermissionsChangeParam{
 						Groups: []int64{0},
 						Users:  []int64{0},
 					},
-					View: paperlessnix.MailAccountRequestSetPermissionsViewParam{
+					View: paperlessngx.MailAccountRequestSetPermissionsViewParam{
 						Groups: []int64{0},
 						Users:  []int64{0},
 					},
@@ -237,7 +237,7 @@ func TestMailAccountProcessWithOptionalParams(t *testing.T) {
 		},
 	)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -254,31 +254,31 @@ func TestMailAccountTestWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.MailAccounts.Test(context.TODO(), paperlessnix.MailAccountTestParams{
-		MailAccountRequest: paperlessnix.MailAccountRequestParam{
+	_, err := client.MailAccounts.Test(context.TODO(), paperlessngx.MailAccountTestParams{
+		MailAccountRequest: paperlessngx.MailAccountRequestParam{
 			ImapServer:   "x",
 			Name:         "x",
 			Password:     "x",
 			Username:     "x",
 			AccountType:  1,
-			CharacterSet: paperlessnix.String("x"),
-			Expiration:   paperlessnix.Time(time.Now()),
-			ImapPort:     paperlessnix.Int(-9007199254740991),
+			CharacterSet: paperlessngx.String("x"),
+			Expiration:   paperlessngx.Time(time.Now()),
+			ImapPort:     paperlessngx.Int(-9007199254740991),
 			ImapSecurity: 1,
-			IsToken:      paperlessnix.Bool(true),
-			Owner:        paperlessnix.Int(0),
-			SetPermissions: paperlessnix.MailAccountRequestSetPermissionsParam{
-				Change: paperlessnix.MailAccountRequestSetPermissionsChangeParam{
+			IsToken:      paperlessngx.Bool(true),
+			Owner:        paperlessngx.Int(0),
+			SetPermissions: paperlessngx.MailAccountRequestSetPermissionsParam{
+				Change: paperlessngx.MailAccountRequestSetPermissionsChangeParam{
 					Groups: []int64{0},
 					Users:  []int64{0},
 				},
-				View: paperlessnix.MailAccountRequestSetPermissionsViewParam{
+				View: paperlessngx.MailAccountRequestSetPermissionsViewParam{
 					Groups: []int64{0},
 					Users:  []int64{0},
 				},
@@ -286,7 +286,7 @@ func TestMailAccountTestWithOptionalParams(t *testing.T) {
 		},
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

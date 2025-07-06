@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package paperlessnix_test
+package paperlessngx_test
 
 import (
 	"context"
@@ -22,44 +22,44 @@ func TestMailRuleNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.MailRules.New(context.TODO(), paperlessnix.MailRuleNewParams{
-		MailRuleRequest: paperlessnix.MailRuleRequestParam{
+	_, err := client.MailRules.New(context.TODO(), paperlessngx.MailRuleNewParams{
+		MailRuleRequest: paperlessngx.MailRuleRequestParam{
 			Account:                         0,
 			Name:                            "x",
 			Action:                          1,
-			ActionParameter:                 paperlessnix.String("x"),
-			AssignCorrespondent:             paperlessnix.Int(0),
+			ActionParameter:                 paperlessngx.String("x"),
+			AssignCorrespondent:             paperlessngx.Int(0),
 			AssignCorrespondentFrom:         1,
-			AssignDocumentType:              paperlessnix.Int(0),
-			AssignOwnerFromRule:             paperlessnix.Bool(true),
+			AssignDocumentType:              paperlessngx.Int(0),
+			AssignOwnerFromRule:             paperlessngx.Bool(true),
 			AssignTags:                      []int64{0},
 			AssignTitleFrom:                 1,
 			AttachmentType:                  1,
 			ConsumptionScope:                1,
-			Enabled:                         paperlessnix.Bool(true),
-			FilterAttachmentFilenameExclude: paperlessnix.String("filter_attachment_filename_exclude"),
-			FilterAttachmentFilenameInclude: paperlessnix.String("filter_attachment_filename_include"),
-			FilterBody:                      paperlessnix.String("filter_body"),
-			FilterFrom:                      paperlessnix.String("filter_from"),
-			FilterSubject:                   paperlessnix.String("filter_subject"),
-			FilterTo:                        paperlessnix.String("filter_to"),
-			Folder:                          paperlessnix.String("x"),
-			MaximumAge:                      paperlessnix.Int(0),
-			Order:                           paperlessnix.Int(0),
-			Owner:                           paperlessnix.Int(0),
+			Enabled:                         paperlessngx.Bool(true),
+			FilterAttachmentFilenameExclude: paperlessngx.String("filter_attachment_filename_exclude"),
+			FilterAttachmentFilenameInclude: paperlessngx.String("filter_attachment_filename_include"),
+			FilterBody:                      paperlessngx.String("filter_body"),
+			FilterFrom:                      paperlessngx.String("filter_from"),
+			FilterSubject:                   paperlessngx.String("filter_subject"),
+			FilterTo:                        paperlessngx.String("filter_to"),
+			Folder:                          paperlessngx.String("x"),
+			MaximumAge:                      paperlessngx.Int(0),
+			Order:                           paperlessngx.Int(0),
+			Owner:                           paperlessngx.Int(0),
 			PdfLayout:                       0,
-			SetPermissions: paperlessnix.MailRuleRequestSetPermissionsParam{
-				Change: paperlessnix.MailRuleRequestSetPermissionsChangeParam{
+			SetPermissions: paperlessngx.MailRuleRequestSetPermissionsParam{
+				Change: paperlessngx.MailRuleRequestSetPermissionsChangeParam{
 					Groups: []int64{0},
 					Users:  []int64{0},
 				},
-				View: paperlessnix.MailRuleRequestSetPermissionsViewParam{
+				View: paperlessngx.MailRuleRequestSetPermissionsViewParam{
 					Groups: []int64{0},
 					Users:  []int64{0},
 				},
@@ -67,7 +67,7 @@ func TestMailRuleNewWithOptionalParams(t *testing.T) {
 		},
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -84,7 +84,7 @@ func TestMailRuleGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -92,7 +92,7 @@ func TestMailRuleGet(t *testing.T) {
 	)
 	_, err := client.MailRules.Get(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -109,7 +109,7 @@ func TestMailRuleUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -118,37 +118,37 @@ func TestMailRuleUpdateWithOptionalParams(t *testing.T) {
 	_, err := client.MailRules.Update(
 		context.TODO(),
 		0,
-		paperlessnix.MailRuleUpdateParams{
-			Account:                         paperlessnix.Int(0),
+		paperlessngx.MailRuleUpdateParams{
+			Account:                         paperlessngx.Int(0),
 			Action:                          1,
-			ActionParameter:                 paperlessnix.String("x"),
-			AssignCorrespondent:             paperlessnix.Int(0),
+			ActionParameter:                 paperlessngx.String("x"),
+			AssignCorrespondent:             paperlessngx.Int(0),
 			AssignCorrespondentFrom:         1,
-			AssignDocumentType:              paperlessnix.Int(0),
-			AssignOwnerFromRule:             paperlessnix.Bool(true),
+			AssignDocumentType:              paperlessngx.Int(0),
+			AssignOwnerFromRule:             paperlessngx.Bool(true),
 			AssignTags:                      []int64{0},
 			AssignTitleFrom:                 1,
 			AttachmentType:                  1,
 			ConsumptionScope:                1,
-			Enabled:                         paperlessnix.Bool(true),
-			FilterAttachmentFilenameExclude: paperlessnix.String("filter_attachment_filename_exclude"),
-			FilterAttachmentFilenameInclude: paperlessnix.String("filter_attachment_filename_include"),
-			FilterBody:                      paperlessnix.String("filter_body"),
-			FilterFrom:                      paperlessnix.String("filter_from"),
-			FilterSubject:                   paperlessnix.String("filter_subject"),
-			FilterTo:                        paperlessnix.String("filter_to"),
-			Folder:                          paperlessnix.String("x"),
-			MaximumAge:                      paperlessnix.Int(0),
-			Name:                            paperlessnix.String("x"),
-			Order:                           paperlessnix.Int(0),
-			Owner:                           paperlessnix.Int(0),
+			Enabled:                         paperlessngx.Bool(true),
+			FilterAttachmentFilenameExclude: paperlessngx.String("filter_attachment_filename_exclude"),
+			FilterAttachmentFilenameInclude: paperlessngx.String("filter_attachment_filename_include"),
+			FilterBody:                      paperlessngx.String("filter_body"),
+			FilterFrom:                      paperlessngx.String("filter_from"),
+			FilterSubject:                   paperlessngx.String("filter_subject"),
+			FilterTo:                        paperlessngx.String("filter_to"),
+			Folder:                          paperlessngx.String("x"),
+			MaximumAge:                      paperlessngx.Int(0),
+			Name:                            paperlessngx.String("x"),
+			Order:                           paperlessngx.Int(0),
+			Owner:                           paperlessngx.Int(0),
 			PdfLayout:                       0,
-			SetPermissions: paperlessnix.MailRuleUpdateParamsSetPermissions{
-				Change: paperlessnix.MailRuleUpdateParamsSetPermissionsChange{
+			SetPermissions: paperlessngx.MailRuleUpdateParamsSetPermissions{
+				Change: paperlessngx.MailRuleUpdateParamsSetPermissionsChange{
 					Groups: []int64{0},
 					Users:  []int64{0},
 				},
-				View: paperlessnix.MailRuleUpdateParamsSetPermissionsView{
+				View: paperlessngx.MailRuleUpdateParamsSetPermissionsView{
 					Groups: []int64{0},
 					Users:  []int64{0},
 				},
@@ -156,7 +156,7 @@ func TestMailRuleUpdateWithOptionalParams(t *testing.T) {
 		},
 	)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -173,18 +173,18 @@ func TestMailRuleListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.MailRules.List(context.TODO(), paperlessnix.MailRuleListParams{
-		Page:     paperlessnix.Int(0),
-		PageSize: paperlessnix.Int(0),
+	_, err := client.MailRules.List(context.TODO(), paperlessngx.MailRuleListParams{
+		Page:     paperlessngx.Int(0),
+		PageSize: paperlessngx.Int(0),
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -201,7 +201,7 @@ func TestMailRuleDelete(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -209,7 +209,7 @@ func TestMailRuleDelete(t *testing.T) {
 	)
 	err := client.MailRules.Delete(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

@@ -1,8 +1,8 @@
-# Paperless Nix Go API Library
+# Paperless Ngx Go API Library
 
 <a href="https://pkg.go.dev/github.com/stainless-sdks/paperless-nix-go"><img src="https://pkg.go.dev/badge/github.com/stainless-sdks/paperless-nix-go.svg" alt="Go Reference"></a>
 
-The Paperless Nix Go library provides convenient access to the [Paperless Nix REST API](https://docs.paperless-ngx.com/api/)
+The Paperless Ngx Go library provides convenient access to the [Paperless Ngx REST API](https://docs.paperless-ngx.com/api/)
 from applications written in Go.
 
 It is generated with [Stainless](https://www.stainless.com/).
@@ -11,7 +11,7 @@ It is generated with [Stainless](https://www.stainless.com/).
 
 ```go
 import (
-	"github.com/stainless-sdks/paperless-nix-go" // imported as paperlessnix
+	"github.com/stainless-sdks/paperless-nix-go" // imported as paperlessngx
 )
 ```
 
@@ -41,14 +41,14 @@ import (
 )
 
 func main() {
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithUsername("My Username"), // defaults to os.LookupEnv("PAPERLESS_NIX_USERNAME")
 		option.WithPassword("My Password"), // defaults to os.LookupEnv("PAPERLESS_NIX_PASSWORD")
 	)
-	bulkEditObject, err := client.BulkEditObjects.New(context.TODO(), paperlessnix.BulkEditObjectNewParams{
-		ObjectType: paperlessnix.BulkEditObjectNewParamsObjectTypeTags,
+	bulkEditObject, err := client.BulkEditObjects.New(context.TODO(), paperlessngx.BulkEditObjectNewParams{
+		ObjectType: paperlessngx.BulkEditObjectNewParamsObjectTypeTags,
 		Objects:    []int64{0},
-		Operation:  paperlessnix.BulkEditObjectNewParamsOperationSetPermissions,
+		Operation:  paperlessngx.BulkEditObjectNewParamsOperationSetPermissions,
 	})
 	if err != nil {
 		panic(err.Error())
@@ -60,13 +60,13 @@ func main() {
 
 ### Request fields
 
-The paperlessnix library uses the [`omitzero`](https://tip.golang.org/doc/go1.24#encodingjsonpkgencodingjson)
+The paperlessngx library uses the [`omitzero`](https://tip.golang.org/doc/go1.24#encodingjsonpkgencodingjson)
 semantics from the Go 1.24+ `encoding/json` release for request fields.
 
 Required primitive fields (`int64`, `string`, etc.) feature the tag <code>\`json:"...,required"\`</code>. These
 fields are always serialized, even their zero values.
 
-Optional primitive types are wrapped in a `param.Opt[T]`. These fields can be set with the provided constructors, `paperlessnix.String(string)`, `paperlessnix.Int(int64)`, etc.
+Optional primitive types are wrapped in a `param.Opt[T]`. These fields can be set with the provided constructors, `paperlessngx.String(string)`, `paperlessngx.Int(int64)`, etc.
 
 Any `param.Opt[T]`, map, slice, struct or string enum uses the
 tag <code>\`json:"...,omitzero"\`</code>. Its zero value is considered omitted.
@@ -74,17 +74,17 @@ tag <code>\`json:"...,omitzero"\`</code>. Its zero value is considered omitted.
 The `param.IsOmitted(any)` function can confirm the presence of any `omitzero` field.
 
 ```go
-p := paperlessnix.ExampleParams{
+p := paperlessngx.ExampleParams{
 	ID:   "id_xxx",                   // required property
-	Name: paperlessnix.String("..."), // optional property
+	Name: paperlessngx.String("..."), // optional property
 
-	Point: paperlessnix.Point{
+	Point: paperlessngx.Point{
 		X: 0,                   // required field will serialize as 0
-		Y: paperlessnix.Int(1), // optional field will serialize as 1
+		Y: paperlessngx.Int(1), // optional field will serialize as 1
 		// ... omitted non-required fields will not be serialized
 	},
 
-	Origin: paperlessnix.Origin{}, // the zero value of [Origin] is considered omitted
+	Origin: paperlessngx.Origin{}, // the zero value of [Origin] is considered omitted
 }
 ```
 
@@ -113,7 +113,7 @@ p.SetExtraFields(map[string]any{
 })
 
 // Send a number instead of an object
-custom := param.Override[paperlessnix.FooParams](12)
+custom := param.Override[paperlessngx.FooParams](12)
 ```
 
 ### Request unions
@@ -254,7 +254,7 @@ This library uses the functional options pattern. Functions defined in the
 requests. For example:
 
 ```go
-client := paperlessnix.NewClient(
+client := paperlessngx.NewClient(
 	// Adds a header to every request made by the client
 	option.WithHeader("X-Some-Header", "custom_header_info"),
 )
@@ -283,20 +283,20 @@ with additional helper methods like `.GetNextPage()`, e.g.:
 ### Errors
 
 When the API returns a non-success status code, we return an error with type
-`*paperlessnix.Error`. This contains the `StatusCode`, `*http.Request`, and
+`*paperlessngx.Error`. This contains the `StatusCode`, `*http.Request`, and
 `*http.Response` values of the request, as well as the JSON of the error body
 (much like other response objects in the SDK).
 
 To handle errors, we recommend that you use the `errors.As` pattern:
 
 ```go
-_, err := client.BulkEditObjects.New(context.TODO(), paperlessnix.BulkEditObjectNewParams{
-	ObjectType: paperlessnix.BulkEditObjectNewParamsObjectTypeTags,
+_, err := client.BulkEditObjects.New(context.TODO(), paperlessngx.BulkEditObjectNewParams{
+	ObjectType: paperlessngx.BulkEditObjectNewParamsObjectTypeTags,
 	Objects:    []int64{0},
-	Operation:  paperlessnix.BulkEditObjectNewParamsOperationSetPermissions,
+	Operation:  paperlessngx.BulkEditObjectNewParamsOperationSetPermissions,
 })
 if err != nil {
-	var apierr *paperlessnix.Error
+	var apierr *paperlessngx.Error
 	if errors.As(err, &apierr) {
 		println(string(apierr.DumpRequest(true)))  // Prints the serialized HTTP request
 		println(string(apierr.DumpResponse(true))) // Prints the serialized HTTP response
@@ -321,10 +321,10 @@ ctx, cancel := context.WithTimeout(context.Background(), 5*time.Minute)
 defer cancel()
 client.BulkEditObjects.New(
 	ctx,
-	paperlessnix.BulkEditObjectNewParams{
-		ObjectType: paperlessnix.BulkEditObjectNewParamsObjectTypeTags,
+	paperlessngx.BulkEditObjectNewParams{
+		ObjectType: paperlessngx.BulkEditObjectNewParamsObjectTypeTags,
 		Objects:    []int64{0},
-		Operation:  paperlessnix.BulkEditObjectNewParamsOperationSetPermissions,
+		Operation:  paperlessngx.BulkEditObjectNewParamsOperationSetPermissions,
 	},
 	// This sets the per-retry timeout
 	option.WithRequestTimeout(20*time.Second),
@@ -341,30 +341,30 @@ The file name and content-type can be customized by implementing `Name() string`
 string` on the run-time type of `io.Reader`. Note that `os.File` implements `Name() string`, so a
 file returned by `os.Open` will be sent with the file name on disk.
 
-We also provide a helper `paperlessnix.File(reader io.Reader, filename string, contentType string)`
+We also provide a helper `paperlessngx.File(reader io.Reader, filename string, contentType string)`
 which can be used to wrap any `io.Reader` with the appropriate file name and content type.
 
 ```go
 // A file from the file system
 file, err := os.Open("/path/to/file")
-paperlessnix.ConfigUpdateParams{
+paperlessngx.ConfigUpdateParams{
 	BarcodeTagMapping: map[string]interface{}{},
 	UserArgs:          map[string]interface{}{},
 	AppLogo:           file,
 }
 
 // A file from a string
-paperlessnix.ConfigUpdateParams{
+paperlessngx.ConfigUpdateParams{
 	BarcodeTagMapping: map[string]interface{}{},
 	UserArgs:          map[string]interface{}{},
 	AppLogo:           strings.NewReader("my file contents"),
 }
 
 // With a custom filename and contentType
-paperlessnix.ConfigUpdateParams{
+paperlessngx.ConfigUpdateParams{
 	BarcodeTagMapping: map[string]interface{}{},
 	UserArgs:          map[string]interface{}{},
-	AppLogo:           paperlessnix.File(strings.NewReader(`{"hello": "foo"}`), "file.go", "application/json"),
+	AppLogo:           paperlessngx.File(strings.NewReader(`{"hello": "foo"}`), "file.go", "application/json"),
 }
 ```
 
@@ -378,17 +378,17 @@ You can use the `WithMaxRetries` option to configure or disable this:
 
 ```go
 // Configure the default for all requests:
-client := paperlessnix.NewClient(
+client := paperlessngx.NewClient(
 	option.WithMaxRetries(0), // default is 2
 )
 
 // Override per-request:
 client.BulkEditObjects.New(
 	context.TODO(),
-	paperlessnix.BulkEditObjectNewParams{
-		ObjectType: paperlessnix.BulkEditObjectNewParamsObjectTypeTags,
+	paperlessngx.BulkEditObjectNewParams{
+		ObjectType: paperlessngx.BulkEditObjectNewParamsObjectTypeTags,
 		Objects:    []int64{0},
-		Operation:  paperlessnix.BulkEditObjectNewParamsOperationSetPermissions,
+		Operation:  paperlessngx.BulkEditObjectNewParamsOperationSetPermissions,
 	},
 	option.WithMaxRetries(5),
 )
@@ -404,10 +404,10 @@ you need to examine response headers, status codes, or other details.
 var response *http.Response
 bulkEditObject, err := client.BulkEditObjects.New(
 	context.TODO(),
-	paperlessnix.BulkEditObjectNewParams{
-		ObjectType: paperlessnix.BulkEditObjectNewParamsObjectTypeTags,
+	paperlessngx.BulkEditObjectNewParams{
+		ObjectType: paperlessngx.BulkEditObjectNewParamsObjectTypeTags,
 		Objects:    []int64{0},
-		Operation:  paperlessnix.BulkEditObjectNewParamsOperationSetPermissions,
+		Operation:  paperlessngx.BulkEditObjectNewParamsOperationSetPermissions,
 	},
 	option.WithResponseInto(&response),
 )
@@ -455,7 +455,7 @@ or the `option.WithJSONSet()` methods.
 params := FooNewParams{
     ID:   "id_xxxx",
     Data: FooNewParamsData{
-        FirstName: paperlessnix.String("John"),
+        FirstName: paperlessngx.String("John"),
     },
 }
 client.Foo.New(context.Background(), params, option.WithJSONSet("data.last_name", "Doe"))
@@ -490,7 +490,7 @@ func Logger(req *http.Request, next option.MiddlewareNext) (res *http.Response, 
     return res, err
 }
 
-client := paperlessnix.NewClient(
+client := paperlessngx.NewClient(
 	option.WithMiddleware(Logger),
 )
 ```

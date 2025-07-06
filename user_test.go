@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package paperlessnix_test
+package paperlessngx_test
 
 import (
 	"context"
@@ -23,29 +23,29 @@ func TestUserNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Users.New(context.TODO(), paperlessnix.UserNewParams{
-		UserRequest: paperlessnix.UserRequestParam{
+	_, err := client.Users.New(context.TODO(), paperlessngx.UserNewParams{
+		UserRequest: paperlessngx.UserRequestParam{
 			Username:        "username",
-			DateJoined:      paperlessnix.Time(time.Now()),
-			Email:           paperlessnix.String("dev@stainless.com"),
-			FirstName:       paperlessnix.String("first_name"),
+			DateJoined:      paperlessngx.Time(time.Now()),
+			Email:           paperlessngx.String("dev@stainless.com"),
+			FirstName:       paperlessngx.String("first_name"),
 			Groups:          []int64{0},
-			IsActive:        paperlessnix.Bool(true),
-			IsStaff:         paperlessnix.Bool(true),
-			IsSuperuser:     paperlessnix.Bool(true),
-			LastName:        paperlessnix.String("last_name"),
-			Password:        paperlessnix.String("x"),
+			IsActive:        paperlessngx.Bool(true),
+			IsStaff:         paperlessngx.Bool(true),
+			IsSuperuser:     paperlessngx.Bool(true),
+			LastName:        paperlessngx.String("last_name"),
+			Password:        paperlessngx.String("x"),
 			UserPermissions: []string{"x"},
 		},
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -62,7 +62,7 @@ func TestUserGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -70,7 +70,7 @@ func TestUserGet(t *testing.T) {
 	)
 	_, err := client.Users.Get(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -87,7 +87,7 @@ func TestUserUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -96,22 +96,22 @@ func TestUserUpdateWithOptionalParams(t *testing.T) {
 	_, err := client.Users.Update(
 		context.TODO(),
 		0,
-		paperlessnix.UserUpdateParams{
-			DateJoined:      paperlessnix.Time(time.Now()),
-			Email:           paperlessnix.String("dev@stainless.com"),
-			FirstName:       paperlessnix.String("first_name"),
+		paperlessngx.UserUpdateParams{
+			DateJoined:      paperlessngx.Time(time.Now()),
+			Email:           paperlessngx.String("dev@stainless.com"),
+			FirstName:       paperlessngx.String("first_name"),
 			Groups:          []int64{0},
-			IsActive:        paperlessnix.Bool(true),
-			IsStaff:         paperlessnix.Bool(true),
-			IsSuperuser:     paperlessnix.Bool(true),
-			LastName:        paperlessnix.String("last_name"),
-			Password:        paperlessnix.String("x"),
+			IsActive:        paperlessngx.Bool(true),
+			IsStaff:         paperlessngx.Bool(true),
+			IsSuperuser:     paperlessngx.Bool(true),
+			LastName:        paperlessngx.String("last_name"),
+			Password:        paperlessngx.String("x"),
 			UserPermissions: []string{"x"},
-			Username:        paperlessnix.String("username"),
+			Username:        paperlessngx.String("username"),
 		},
 	)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -128,23 +128,23 @@ func TestUserListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Users.List(context.TODO(), paperlessnix.UserListParams{
-		Ordering:            paperlessnix.String("ordering"),
-		Page:                paperlessnix.Int(0),
-		PageSize:            paperlessnix.Int(0),
-		UsernameIcontains:   paperlessnix.String("username__icontains"),
-		UsernameIendswith:   paperlessnix.String("username__iendswith"),
-		UsernameIexact:      paperlessnix.String("username__iexact"),
-		UsernameIstartswith: paperlessnix.String("username__istartswith"),
+	_, err := client.Users.List(context.TODO(), paperlessngx.UserListParams{
+		Ordering:            paperlessngx.String("ordering"),
+		Page:                paperlessngx.Int(0),
+		PageSize:            paperlessngx.Int(0),
+		UsernameIcontains:   paperlessngx.String("username__icontains"),
+		UsernameIendswith:   paperlessngx.String("username__iendswith"),
+		UsernameIexact:      paperlessngx.String("username__iexact"),
+		UsernameIstartswith: paperlessngx.String("username__istartswith"),
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -161,7 +161,7 @@ func TestUserDelete(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -169,7 +169,7 @@ func TestUserDelete(t *testing.T) {
 	)
 	err := client.Users.Delete(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -186,7 +186,7 @@ func TestUserDeactivateTotp(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -194,7 +194,7 @@ func TestUserDeactivateTotp(t *testing.T) {
 	)
 	_, err := client.Users.DeactivateTotp(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

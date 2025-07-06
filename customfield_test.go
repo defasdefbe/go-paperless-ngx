@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package paperlessnix_test
+package paperlessngx_test
 
 import (
 	"context"
@@ -22,21 +22,21 @@ func TestCustomFieldNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.CustomFields.New(context.TODO(), paperlessnix.CustomFieldNewParams{
-		CustomFieldRequest: paperlessnix.CustomFieldRequestParam{
-			DataType:  paperlessnix.DataTypeEnumString,
+	_, err := client.CustomFields.New(context.TODO(), paperlessngx.CustomFieldNewParams{
+		CustomFieldRequest: paperlessngx.CustomFieldRequestParam{
+			DataType:  paperlessngx.DataTypeEnumString,
 			Name:      "x",
 			ExtraData: map[string]interface{}{},
 		},
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -53,7 +53,7 @@ func TestCustomFieldGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -61,7 +61,7 @@ func TestCustomFieldGet(t *testing.T) {
 	)
 	_, err := client.CustomFields.Get(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -78,7 +78,7 @@ func TestCustomFieldUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -87,14 +87,14 @@ func TestCustomFieldUpdateWithOptionalParams(t *testing.T) {
 	_, err := client.CustomFields.Update(
 		context.TODO(),
 		0,
-		paperlessnix.CustomFieldUpdateParams{
-			DataType:  paperlessnix.DataTypeEnumString,
+		paperlessngx.CustomFieldUpdateParams{
+			DataType:  paperlessngx.DataTypeEnumString,
 			ExtraData: map[string]interface{}{},
-			Name:      paperlessnix.String("x"),
+			Name:      paperlessngx.String("x"),
 		},
 	)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -111,25 +111,25 @@ func TestCustomFieldListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.CustomFields.List(context.TODO(), paperlessnix.CustomFieldListParams{
-		ID:              paperlessnix.Int(0),
+	_, err := client.CustomFields.List(context.TODO(), paperlessngx.CustomFieldListParams{
+		ID:              paperlessngx.Int(0),
 		IDIn:            []int64{0},
-		NameIcontains:   paperlessnix.String("name__icontains"),
-		NameIendswith:   paperlessnix.String("name__iendswith"),
-		NameIexact:      paperlessnix.String("name__iexact"),
-		NameIstartswith: paperlessnix.String("name__istartswith"),
-		Ordering:        paperlessnix.String("ordering"),
-		Page:            paperlessnix.Int(0),
-		PageSize:        paperlessnix.Int(0),
+		NameIcontains:   paperlessngx.String("name__icontains"),
+		NameIendswith:   paperlessngx.String("name__iendswith"),
+		NameIexact:      paperlessngx.String("name__iexact"),
+		NameIstartswith: paperlessngx.String("name__istartswith"),
+		Ordering:        paperlessngx.String("ordering"),
+		Page:            paperlessngx.Int(0),
+		PageSize:        paperlessngx.Int(0),
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -146,7 +146,7 @@ func TestCustomFieldDelete(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -154,7 +154,7 @@ func TestCustomFieldDelete(t *testing.T) {
 	)
 	err := client.CustomFields.Delete(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

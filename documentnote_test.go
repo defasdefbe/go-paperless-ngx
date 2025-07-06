@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package paperlessnix_test
+package paperlessngx_test
 
 import (
 	"context"
@@ -22,7 +22,7 @@ func TestDocumentNoteNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -31,15 +31,15 @@ func TestDocumentNoteNewWithOptionalParams(t *testing.T) {
 	_, err := client.Documents.Notes.New(
 		context.TODO(),
 		0,
-		paperlessnix.DocumentNoteNewParams{
+		paperlessngx.DocumentNoteNewParams{
 			Note:     "x",
-			ID:       paperlessnix.Int(0),
-			Page:     paperlessnix.Int(0),
-			PageSize: paperlessnix.Int(0),
+			ID:       paperlessngx.Int(0),
+			Page:     paperlessngx.Int(0),
+			PageSize: paperlessngx.Int(0),
 		},
 	)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -56,7 +56,7 @@ func TestDocumentNoteListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -65,14 +65,14 @@ func TestDocumentNoteListWithOptionalParams(t *testing.T) {
 	_, err := client.Documents.Notes.List(
 		context.TODO(),
 		0,
-		paperlessnix.DocumentNoteListParams{
-			ID:       paperlessnix.Int(0),
-			Page:     paperlessnix.Int(0),
-			PageSize: paperlessnix.Int(0),
+		paperlessngx.DocumentNoteListParams{
+			ID:       paperlessngx.Int(0),
+			Page:     paperlessngx.Int(0),
+			PageSize: paperlessngx.Int(0),
 		},
 	)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -89,7 +89,7 @@ func TestDocumentNoteDeleteWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -98,14 +98,14 @@ func TestDocumentNoteDeleteWithOptionalParams(t *testing.T) {
 	_, err := client.Documents.Notes.Delete(
 		context.TODO(),
 		0,
-		paperlessnix.DocumentNoteDeleteParams{
-			ID:       paperlessnix.Int(0),
-			Page:     paperlessnix.Int(0),
-			PageSize: paperlessnix.Int(0),
+		paperlessngx.DocumentNoteDeleteParams{
+			ID:       paperlessngx.Int(0),
+			Page:     paperlessngx.Int(0),
+			PageSize: paperlessngx.Int(0),
 		},
 	)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

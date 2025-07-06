@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package paperlessnix_test
+package paperlessngx_test
 
 import (
 	"context"
@@ -23,7 +23,7 @@ func TestTaskGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -31,7 +31,7 @@ func TestTaskGet(t *testing.T) {
 	)
 	_, err := client.Tasks.Get(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -48,21 +48,21 @@ func TestTaskListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Tasks.List(context.TODO(), paperlessnix.TaskListParams{
-		Acknowledged: paperlessnix.Bool(true),
-		Ordering:     paperlessnix.String("ordering"),
-		Status:       paperlessnix.TaskListParamsStatusFailure,
-		TaskName:     paperlessnix.TaskListParamsTaskNameCheckSanity,
-		Type:         paperlessnix.TaskListParamsTypeAutoTask,
+	_, err := client.Tasks.List(context.TODO(), paperlessngx.TaskListParams{
+		Acknowledged: paperlessngx.Bool(true),
+		Ordering:     paperlessngx.String("ordering"),
+		Status:       paperlessngx.TaskListParamsStatusFailure,
+		TaskName:     paperlessngx.TaskListParamsTaskNameCheckSanity,
+		Type:         paperlessngx.TaskListParamsTypeAutoTask,
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -79,17 +79,17 @@ func TestTaskAcknowledge(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Tasks.Acknowledge(context.TODO(), paperlessnix.TaskAcknowledgeParams{
+	_, err := client.Tasks.Acknowledge(context.TODO(), paperlessngx.TaskAcknowledgeParams{
 		Tasks: []int64{0},
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -106,26 +106,26 @@ func TestTaskRunWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Tasks.Run(context.TODO(), paperlessnix.TaskRunParams{
+	_, err := client.Tasks.Run(context.TODO(), paperlessngx.TaskRunParams{
 		TaskID:       "x",
-		Acknowledged: paperlessnix.Bool(true),
-		DateCreated:  paperlessnix.Time(time.Now()),
-		DateDone:     paperlessnix.Time(time.Now()),
-		Owner:        paperlessnix.Int(0),
-		Result:       paperlessnix.String("x"),
-		Status:       paperlessnix.StatusEnumFailure,
-		TaskFileName: paperlessnix.String("x"),
-		TaskName:     paperlessnix.TaskRunParamsTaskNameConsumeFile,
-		Type:         paperlessnix.TasksViewTypeEnumAutoTask,
+		Acknowledged: paperlessngx.Bool(true),
+		DateCreated:  paperlessngx.Time(time.Now()),
+		DateDone:     paperlessngx.Time(time.Now()),
+		Owner:        paperlessngx.Int(0),
+		Result:       paperlessngx.String("x"),
+		Status:       paperlessngx.StatusEnumFailure,
+		TaskFileName: paperlessngx.String("x"),
+		TaskName:     paperlessngx.TaskRunParamsTaskNameConsumeFile,
+		Type:         paperlessngx.TasksViewTypeEnumAutoTask,
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

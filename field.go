@@ -1,4 +1,4 @@
-package paperlessnix
+package paperlessngx
 
 import (
 	"github.com/stainless-sdks/paperless-nix-go/packages/param"

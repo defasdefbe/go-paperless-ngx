@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package paperlessnix_test
+package paperlessngx_test
 
 import (
 	"bytes"
@@ -25,7 +25,7 @@ func TestDocumentGetWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -34,13 +34,13 @@ func TestDocumentGetWithOptionalParams(t *testing.T) {
 	_, err := client.Documents.Get(
 		context.TODO(),
 		0,
-		paperlessnix.DocumentGetParams{
+		paperlessngx.DocumentGetParams{
 			Fields:    []string{"string"},
-			FullPerms: paperlessnix.Bool(true),
+			FullPerms: paperlessngx.Bool(true),
 		},
 	)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -57,7 +57,7 @@ func TestDocumentUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -66,39 +66,39 @@ func TestDocumentUpdateWithOptionalParams(t *testing.T) {
 	_, err := client.Documents.Update(
 		context.TODO(),
 		0,
-		paperlessnix.DocumentUpdateParams{
-			ArchiveSerialNumber: paperlessnix.Int(0),
-			Content:             paperlessnix.String("content"),
-			Correspondent:       paperlessnix.Int(0),
-			Created:             paperlessnix.Time(time.Now()),
-			CreatedDate:         paperlessnix.Time(time.Now()),
-			CustomFields: []paperlessnix.CustomFieldInstanceRequestParam{{
+		paperlessngx.DocumentUpdateParams{
+			ArchiveSerialNumber: paperlessngx.Int(0),
+			Content:             paperlessngx.String("content"),
+			Correspondent:       paperlessngx.Int(0),
+			Created:             paperlessngx.Time(time.Now()),
+			CreatedDate:         paperlessngx.Time(time.Now()),
+			CustomFields: []paperlessngx.CustomFieldInstanceRequestParam{{
 				Field: 0,
-				Value: paperlessnix.CustomFieldInstanceRequestValueUnionParam{
-					OfString: paperlessnix.String("string"),
+				Value: paperlessngx.CustomFieldInstanceRequestValueUnionParam{
+					OfString: paperlessngx.String("string"),
 				},
 			}},
-			DeletedAt:       paperlessnix.Time(time.Now()),
-			DocumentType:    paperlessnix.Int(0),
-			Owner:           paperlessnix.Int(0),
-			RemoveInboxTags: paperlessnix.Bool(true),
-			SetPermissions: paperlessnix.DocumentUpdateParamsSetPermissions{
-				Change: paperlessnix.DocumentUpdateParamsSetPermissionsChange{
+			DeletedAt:       paperlessngx.Time(time.Now()),
+			DocumentType:    paperlessngx.Int(0),
+			Owner:           paperlessngx.Int(0),
+			RemoveInboxTags: paperlessngx.Bool(true),
+			SetPermissions: paperlessngx.DocumentUpdateParamsSetPermissions{
+				Change: paperlessngx.DocumentUpdateParamsSetPermissionsChange{
 					Groups: []int64{0},
 					Users:  []int64{0},
 				},
-				View: paperlessnix.DocumentUpdateParamsSetPermissionsView{
+				View: paperlessngx.DocumentUpdateParamsSetPermissionsView{
 					Groups: []int64{0},
 					Users:  []int64{0},
 				},
 			},
-			StoragePath: paperlessnix.Int(0),
+			StoragePath: paperlessngx.Int(0),
 			Tags:        []int64{0},
-			Title:       paperlessnix.String("title"),
+			Title:       paperlessngx.String("title"),
 		},
 	)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -115,126 +115,126 @@ func TestDocumentListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Documents.List(context.TODO(), paperlessnix.DocumentListParams{
-		ID:                           paperlessnix.Int(0),
-		AddedDateGt:                  paperlessnix.Time(time.Now()),
-		AddedDateGte:                 paperlessnix.Time(time.Now()),
-		AddedDateLt:                  paperlessnix.Time(time.Now()),
-		AddedDateLte:                 paperlessnix.Time(time.Now()),
-		AddedDay:                     paperlessnix.Float(0),
-		AddedGt:                      paperlessnix.Time(time.Now()),
-		AddedGte:                     paperlessnix.Time(time.Now()),
-		AddedLt:                      paperlessnix.Time(time.Now()),
-		AddedLte:                     paperlessnix.Time(time.Now()),
-		AddedMonth:                   paperlessnix.Float(0),
-		AddedYear:                    paperlessnix.Float(0),
-		ArchiveSerialNumber:          paperlessnix.Int(0),
-		ArchiveSerialNumberGt:        paperlessnix.Int(0),
-		ArchiveSerialNumberGte:       paperlessnix.Int(0),
-		ArchiveSerialNumberIsnull:    paperlessnix.Bool(true),
-		ArchiveSerialNumberLt:        paperlessnix.Int(0),
-		ArchiveSerialNumberLte:       paperlessnix.Int(0),
-		ChecksumIcontains:            paperlessnix.String("checksum__icontains"),
-		ChecksumIendswith:            paperlessnix.String("checksum__iendswith"),
-		ChecksumIexact:               paperlessnix.String("checksum__iexact"),
-		ChecksumIstartswith:          paperlessnix.String("checksum__istartswith"),
-		ContentIcontains:             paperlessnix.String("content__icontains"),
-		ContentIendswith:             paperlessnix.String("content__iendswith"),
-		ContentIexact:                paperlessnix.String("content__iexact"),
-		ContentIstartswith:           paperlessnix.String("content__istartswith"),
-		CorrespondentID:              paperlessnix.Int(0),
+	_, err := client.Documents.List(context.TODO(), paperlessngx.DocumentListParams{
+		ID:                           paperlessngx.Int(0),
+		AddedDateGt:                  paperlessngx.Time(time.Now()),
+		AddedDateGte:                 paperlessngx.Time(time.Now()),
+		AddedDateLt:                  paperlessngx.Time(time.Now()),
+		AddedDateLte:                 paperlessngx.Time(time.Now()),
+		AddedDay:                     paperlessngx.Float(0),
+		AddedGt:                      paperlessngx.Time(time.Now()),
+		AddedGte:                     paperlessngx.Time(time.Now()),
+		AddedLt:                      paperlessngx.Time(time.Now()),
+		AddedLte:                     paperlessngx.Time(time.Now()),
+		AddedMonth:                   paperlessngx.Float(0),
+		AddedYear:                    paperlessngx.Float(0),
+		ArchiveSerialNumber:          paperlessngx.Int(0),
+		ArchiveSerialNumberGt:        paperlessngx.Int(0),
+		ArchiveSerialNumberGte:       paperlessngx.Int(0),
+		ArchiveSerialNumberIsnull:    paperlessngx.Bool(true),
+		ArchiveSerialNumberLt:        paperlessngx.Int(0),
+		ArchiveSerialNumberLte:       paperlessngx.Int(0),
+		ChecksumIcontains:            paperlessngx.String("checksum__icontains"),
+		ChecksumIendswith:            paperlessngx.String("checksum__iendswith"),
+		ChecksumIexact:               paperlessngx.String("checksum__iexact"),
+		ChecksumIstartswith:          paperlessngx.String("checksum__istartswith"),
+		ContentIcontains:             paperlessngx.String("content__icontains"),
+		ContentIendswith:             paperlessngx.String("content__iendswith"),
+		ContentIexact:                paperlessngx.String("content__iexact"),
+		ContentIstartswith:           paperlessngx.String("content__istartswith"),
+		CorrespondentID:              paperlessngx.Int(0),
 		CorrespondentIDIn:            []int64{0},
-		CorrespondentIDNone:          paperlessnix.Int(0),
-		CorrespondentIsnull:          paperlessnix.Bool(true),
-		CorrespondentNameIcontains:   paperlessnix.String("correspondent__name__icontains"),
-		CorrespondentNameIendswith:   paperlessnix.String("correspondent__name__iendswith"),
-		CorrespondentNameIexact:      paperlessnix.String("correspondent__name__iexact"),
-		CorrespondentNameIstartswith: paperlessnix.String("correspondent__name__istartswith"),
-		CreatedDateGt:                paperlessnix.Time(time.Now()),
-		CreatedDateGte:               paperlessnix.Time(time.Now()),
-		CreatedDateLt:                paperlessnix.Time(time.Now()),
-		CreatedDateLte:               paperlessnix.Time(time.Now()),
-		CreatedDay:                   paperlessnix.Float(0),
-		CreatedGt:                    paperlessnix.Time(time.Now()),
-		CreatedGte:                   paperlessnix.Time(time.Now()),
-		CreatedLt:                    paperlessnix.Time(time.Now()),
-		CreatedLte:                   paperlessnix.Time(time.Now()),
-		CreatedMonth:                 paperlessnix.Float(0),
-		CreatedYear:                  paperlessnix.Float(0),
-		CustomFieldQuery:             paperlessnix.String("x"),
-		CustomFieldsIcontains:        paperlessnix.String("x"),
-		CustomFieldsIDAll:            paperlessnix.Int(0),
-		CustomFieldsIDIn:             paperlessnix.Int(0),
-		CustomFieldsIDNone:           paperlessnix.Int(0),
-		DocumentTypeID:               paperlessnix.Int(0),
+		CorrespondentIDNone:          paperlessngx.Int(0),
+		CorrespondentIsnull:          paperlessngx.Bool(true),
+		CorrespondentNameIcontains:   paperlessngx.String("correspondent__name__icontains"),
+		CorrespondentNameIendswith:   paperlessngx.String("correspondent__name__iendswith"),
+		CorrespondentNameIexact:      paperlessngx.String("correspondent__name__iexact"),
+		CorrespondentNameIstartswith: paperlessngx.String("correspondent__name__istartswith"),
+		CreatedDateGt:                paperlessngx.Time(time.Now()),
+		CreatedDateGte:               paperlessngx.Time(time.Now()),
+		CreatedDateLt:                paperlessngx.Time(time.Now()),
+		CreatedDateLte:               paperlessngx.Time(time.Now()),
+		CreatedDay:                   paperlessngx.Float(0),
+		CreatedGt:                    paperlessngx.Time(time.Now()),
+		CreatedGte:                   paperlessngx.Time(time.Now()),
+		CreatedLt:                    paperlessngx.Time(time.Now()),
+		CreatedLte:                   paperlessngx.Time(time.Now()),
+		CreatedMonth:                 paperlessngx.Float(0),
+		CreatedYear:                  paperlessngx.Float(0),
+		CustomFieldQuery:             paperlessngx.String("x"),
+		CustomFieldsIcontains:        paperlessngx.String("x"),
+		CustomFieldsIDAll:            paperlessngx.Int(0),
+		CustomFieldsIDIn:             paperlessngx.Int(0),
+		CustomFieldsIDNone:           paperlessngx.Int(0),
+		DocumentTypeID:               paperlessngx.Int(0),
 		DocumentTypeIDIn:             []int64{0},
-		DocumentTypeIDNone:           paperlessnix.Int(0),
-		DocumentTypeIsnull:           paperlessnix.Bool(true),
-		DocumentTypeNameIcontains:    paperlessnix.String("document_type__name__icontains"),
-		DocumentTypeNameIendswith:    paperlessnix.String("document_type__name__iendswith"),
-		DocumentTypeNameIexact:       paperlessnix.String("document_type__name__iexact"),
-		DocumentTypeNameIstartswith:  paperlessnix.String("document_type__name__istartswith"),
+		DocumentTypeIDNone:           paperlessngx.Int(0),
+		DocumentTypeIsnull:           paperlessngx.Bool(true),
+		DocumentTypeNameIcontains:    paperlessngx.String("document_type__name__icontains"),
+		DocumentTypeNameIendswith:    paperlessngx.String("document_type__name__iendswith"),
+		DocumentTypeNameIexact:       paperlessngx.String("document_type__name__iexact"),
+		DocumentTypeNameIstartswith:  paperlessngx.String("document_type__name__istartswith"),
 		Fields:                       []string{"string"},
-		FullPerms:                    paperlessnix.Bool(true),
-		HasCustomFields:              paperlessnix.Bool(true),
+		FullPerms:                    paperlessngx.Bool(true),
+		HasCustomFields:              paperlessngx.Bool(true),
 		IDIn:                         []int64{0},
-		IsInInbox:                    paperlessnix.Bool(true),
-		IsTagged:                     paperlessnix.Bool(true),
-		MimeType:                     paperlessnix.String("mime_type"),
-		ModifiedDateGt:               paperlessnix.Time(time.Now()),
-		ModifiedDateGte:              paperlessnix.Time(time.Now()),
-		ModifiedDateLt:               paperlessnix.Time(time.Now()),
-		ModifiedDateLte:              paperlessnix.Time(time.Now()),
-		ModifiedDay:                  paperlessnix.Float(0),
-		ModifiedGt:                   paperlessnix.Time(time.Now()),
-		ModifiedGte:                  paperlessnix.Time(time.Now()),
-		ModifiedLt:                   paperlessnix.Time(time.Now()),
-		ModifiedLte:                  paperlessnix.Time(time.Now()),
-		ModifiedMonth:                paperlessnix.Float(0),
-		ModifiedYear:                 paperlessnix.Float(0),
-		Ordering:                     paperlessnix.String("ordering"),
-		OriginalFilenameIcontains:    paperlessnix.String("original_filename__icontains"),
-		OriginalFilenameIendswith:    paperlessnix.String("original_filename__iendswith"),
-		OriginalFilenameIexact:       paperlessnix.String("original_filename__iexact"),
-		OriginalFilenameIstartswith:  paperlessnix.String("original_filename__istartswith"),
-		OwnerID:                      paperlessnix.Int(0),
+		IsInInbox:                    paperlessngx.Bool(true),
+		IsTagged:                     paperlessngx.Bool(true),
+		MimeType:                     paperlessngx.String("mime_type"),
+		ModifiedDateGt:               paperlessngx.Time(time.Now()),
+		ModifiedDateGte:              paperlessngx.Time(time.Now()),
+		ModifiedDateLt:               paperlessngx.Time(time.Now()),
+		ModifiedDateLte:              paperlessngx.Time(time.Now()),
+		ModifiedDay:                  paperlessngx.Float(0),
+		ModifiedGt:                   paperlessngx.Time(time.Now()),
+		ModifiedGte:                  paperlessngx.Time(time.Now()),
+		ModifiedLt:                   paperlessngx.Time(time.Now()),
+		ModifiedLte:                  paperlessngx.Time(time.Now()),
+		ModifiedMonth:                paperlessngx.Float(0),
+		ModifiedYear:                 paperlessngx.Float(0),
+		Ordering:                     paperlessngx.String("ordering"),
+		OriginalFilenameIcontains:    paperlessngx.String("original_filename__icontains"),
+		OriginalFilenameIendswith:    paperlessngx.String("original_filename__iendswith"),
+		OriginalFilenameIexact:       paperlessngx.String("original_filename__iexact"),
+		OriginalFilenameIstartswith:  paperlessngx.String("original_filename__istartswith"),
+		OwnerID:                      paperlessngx.Int(0),
 		OwnerIDIn:                    []int64{0},
-		OwnerIDNone:                  paperlessnix.Int(0),
-		OwnerIsnull:                  paperlessnix.Bool(true),
-		Page:                         paperlessnix.Int(0),
-		PageSize:                     paperlessnix.Int(0),
-		Search:                       paperlessnix.String("search"),
-		SharedByID:                   paperlessnix.Bool(true),
-		StoragePathID:                paperlessnix.Int(0),
+		OwnerIDNone:                  paperlessngx.Int(0),
+		OwnerIsnull:                  paperlessngx.Bool(true),
+		Page:                         paperlessngx.Int(0),
+		PageSize:                     paperlessngx.Int(0),
+		Search:                       paperlessngx.String("search"),
+		SharedByID:                   paperlessngx.Bool(true),
+		StoragePathID:                paperlessngx.Int(0),
 		StoragePathIDIn:              []int64{0},
-		StoragePathIDNone:            paperlessnix.Int(0),
-		StoragePathIsnull:            paperlessnix.Bool(true),
-		StoragePathNameIcontains:     paperlessnix.String("storage_path__name__icontains"),
-		StoragePathNameIendswith:     paperlessnix.String("storage_path__name__iendswith"),
-		StoragePathNameIexact:        paperlessnix.String("storage_path__name__iexact"),
-		StoragePathNameIstartswith:   paperlessnix.String("storage_path__name__istartswith"),
-		TagsID:                       paperlessnix.Int(0),
-		TagsIDAll:                    paperlessnix.Int(0),
-		TagsIDIn:                     paperlessnix.Int(0),
-		TagsIDNone:                   paperlessnix.Int(0),
-		TagsNameIcontains:            paperlessnix.String("tags__name__icontains"),
-		TagsNameIendswith:            paperlessnix.String("tags__name__iendswith"),
-		TagsNameIexact:               paperlessnix.String("tags__name__iexact"),
-		TagsNameIstartswith:          paperlessnix.String("tags__name__istartswith"),
-		TitleIcontains:               paperlessnix.String("title__icontains"),
-		TitleIendswith:               paperlessnix.String("title__iendswith"),
-		TitleIexact:                  paperlessnix.String("title__iexact"),
-		TitleIstartswith:             paperlessnix.String("title__istartswith"),
-		TitleContent:                 paperlessnix.String("x"),
+		StoragePathIDNone:            paperlessngx.Int(0),
+		StoragePathIsnull:            paperlessngx.Bool(true),
+		StoragePathNameIcontains:     paperlessngx.String("storage_path__name__icontains"),
+		StoragePathNameIendswith:     paperlessngx.String("storage_path__name__iendswith"),
+		StoragePathNameIexact:        paperlessngx.String("storage_path__name__iexact"),
+		StoragePathNameIstartswith:   paperlessngx.String("storage_path__name__istartswith"),
+		TagsID:                       paperlessngx.Int(0),
+		TagsIDAll:                    paperlessngx.Int(0),
+		TagsIDIn:                     paperlessngx.Int(0),
+		TagsIDNone:                   paperlessngx.Int(0),
+		TagsNameIcontains:            paperlessngx.String("tags__name__icontains"),
+		TagsNameIendswith:            paperlessngx.String("tags__name__iendswith"),
+		TagsNameIexact:               paperlessngx.String("tags__name__iexact"),
+		TagsNameIstartswith:          paperlessngx.String("tags__name__istartswith"),
+		TitleIcontains:               paperlessngx.String("title__icontains"),
+		TitleIendswith:               paperlessngx.String("title__iendswith"),
+		TitleIexact:                  paperlessngx.String("title__iexact"),
+		TitleIstartswith:             paperlessngx.String("title__istartswith"),
+		TitleContent:                 paperlessngx.String("x"),
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -251,7 +251,7 @@ func TestDocumentDelete(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -259,7 +259,7 @@ func TestDocumentDelete(t *testing.T) {
 	)
 	err := client.Documents.Delete(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -276,20 +276,20 @@ func TestDocumentBulkDownloadWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Documents.BulkDownload(context.TODO(), paperlessnix.DocumentBulkDownloadParams{
+	_, err := client.Documents.BulkDownload(context.TODO(), paperlessngx.DocumentBulkDownloadParams{
 		Documents:        []int64{0},
-		Compression:      paperlessnix.CompressionEnumNone,
-		Content:          paperlessnix.ContentEnumArchive,
-		FollowFormatting: paperlessnix.Bool(true),
+		Compression:      paperlessngx.CompressionEnumNone,
+		Content:          paperlessngx.ContentEnumArchive,
+		FollowFormatting: paperlessngx.Bool(true),
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -306,21 +306,21 @@ func TestDocumentBulkEditWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Documents.BulkEdit(context.TODO(), paperlessnix.DocumentBulkEditParams{
+	_, err := client.Documents.BulkEdit(context.TODO(), paperlessngx.DocumentBulkEditParams{
 		Documents: []int64{0},
-		Method:    paperlessnix.DocumentBulkEditParamsMethodSetCorrespondent,
+		Method:    paperlessngx.DocumentBulkEditParamsMethodSetCorrespondent,
 		Parameters: map[string]any{
 			"foo": "bar",
 		},
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -337,7 +337,7 @@ func TestDocumentDownloadWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -346,12 +346,12 @@ func TestDocumentDownloadWithOptionalParams(t *testing.T) {
 	_, err := client.Documents.Download(
 		context.TODO(),
 		0,
-		paperlessnix.DocumentDownloadParams{
-			Original: paperlessnix.Bool(true),
+		paperlessngx.DocumentDownloadParams{
+			Original: paperlessngx.Bool(true),
 		},
 	)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -368,7 +368,7 @@ func TestDocumentEmailWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -377,15 +377,15 @@ func TestDocumentEmailWithOptionalParams(t *testing.T) {
 	_, err := client.Documents.Email(
 		context.TODO(),
 		0,
-		paperlessnix.DocumentEmailParams{
+		paperlessngx.DocumentEmailParams{
 			Addresses:         "x",
 			Message:           "x",
 			Subject:           "x",
-			UseArchiveVersion: paperlessnix.Bool(true),
+			UseArchiveVersion: paperlessngx.Bool(true),
 		},
 	)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -402,7 +402,7 @@ func TestDocumentHistoryWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -411,13 +411,13 @@ func TestDocumentHistoryWithOptionalParams(t *testing.T) {
 	_, err := client.Documents.History(
 		context.TODO(),
 		0,
-		paperlessnix.DocumentHistoryParams{
-			Page:     paperlessnix.Int(0),
-			PageSize: paperlessnix.Int(0),
+		paperlessngx.DocumentHistoryParams{
+			Page:     paperlessngx.Int(0),
+			PageSize: paperlessngx.Int(0),
 		},
 	)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -434,7 +434,7 @@ func TestDocumentMetadata(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -442,7 +442,7 @@ func TestDocumentMetadata(t *testing.T) {
 	)
 	_, err := client.Documents.Metadata(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -459,7 +459,7 @@ func TestDocumentNextAsn(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -467,7 +467,7 @@ func TestDocumentNextAsn(t *testing.T) {
 	)
 	_, err := client.Documents.NextAsn(context.TODO())
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -484,7 +484,7 @@ func TestDocumentPreview(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -492,7 +492,7 @@ func TestDocumentPreview(t *testing.T) {
 	)
 	_, err := client.Documents.Preview(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -509,17 +509,17 @@ func TestDocumentSelectionData(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Documents.SelectionData(context.TODO(), paperlessnix.DocumentSelectionDataParams{
+	_, err := client.Documents.SelectionData(context.TODO(), paperlessngx.DocumentSelectionDataParams{
 		Documents: []int64{0},
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -536,7 +536,7 @@ func TestDocumentShareLinks(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -544,7 +544,7 @@ func TestDocumentShareLinks(t *testing.T) {
 	)
 	_, err := client.Documents.ShareLinks(context.TODO(), "id")
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -561,7 +561,7 @@ func TestDocumentSuggestions(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -569,7 +569,7 @@ func TestDocumentSuggestions(t *testing.T) {
 	)
 	_, err := client.Documents.Suggestions(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -586,7 +586,7 @@ func TestDocumentThumbnail(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -594,7 +594,7 @@ func TestDocumentThumbnail(t *testing.T) {
 	)
 	_, err := client.Documents.Thumbnail(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -611,26 +611,26 @@ func TestDocumentUploadWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Documents.Upload(context.TODO(), paperlessnix.DocumentUploadParams{
+	_, err := client.Documents.Upload(context.TODO(), paperlessngx.DocumentUploadParams{
 		Document:            io.Reader(bytes.NewBuffer([]byte("some file contents"))),
-		ArchiveSerialNumber: paperlessnix.Int(0),
-		Correspondent:       paperlessnix.Int(0),
-		Created:             paperlessnix.Time(time.Now()),
+		ArchiveSerialNumber: paperlessngx.Int(0),
+		Correspondent:       paperlessngx.Int(0),
+		Created:             paperlessngx.Time(time.Now()),
 		CustomFields:        []int64{0},
-		DocumentType:        paperlessnix.Int(0),
-		FromWebui:           paperlessnix.Bool(true),
-		StoragePath:         paperlessnix.Int(0),
+		DocumentType:        paperlessngx.Int(0),
+		FromWebui:           paperlessngx.Bool(true),
+		StoragePath:         paperlessngx.Int(0),
 		Tags:                []int64{0},
-		Title:               paperlessnix.String("x"),
+		Title:               paperlessngx.String("x"),
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

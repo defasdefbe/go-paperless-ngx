@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package paperlessnix_test
+package paperlessngx_test
 
 import (
 	"context"
@@ -22,31 +22,31 @@ func TestSavedViewNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.SavedViews.New(context.TODO(), paperlessnix.SavedViewNewParams{
-		SavedViewRequest: paperlessnix.SavedViewRequestParam{
-			FilterRules: []paperlessnix.SavedViewFilterRuleParam{{
+	_, err := client.SavedViews.New(context.TODO(), paperlessngx.SavedViewNewParams{
+		SavedViewRequest: paperlessngx.SavedViewRequestParam{
+			FilterRules: []paperlessngx.SavedViewFilterRuleParam{{
 				RuleType: 0,
-				Value:    paperlessnix.String("value"),
+				Value:    paperlessngx.String("value"),
 			}},
 			Name:            "x",
 			ShowInSidebar:   true,
 			ShowOnDashboard: true,
 			DisplayFields:   map[string]interface{}{},
-			DisplayMode:     paperlessnix.SavedViewRequestDisplayModeTable,
-			Owner:           paperlessnix.Int(0),
-			PageSize:        paperlessnix.Int(1),
-			SortField:       paperlessnix.String("sort_field"),
-			SortReverse:     paperlessnix.Bool(true),
+			DisplayMode:     paperlessngx.SavedViewRequestDisplayModeTable,
+			Owner:           paperlessngx.Int(0),
+			PageSize:        paperlessngx.Int(1),
+			SortField:       paperlessngx.String("sort_field"),
+			SortReverse:     paperlessngx.Bool(true),
 		},
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -63,7 +63,7 @@ func TestSavedViewGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -71,7 +71,7 @@ func TestSavedViewGet(t *testing.T) {
 	)
 	_, err := client.SavedViews.Get(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -88,7 +88,7 @@ func TestSavedViewUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -97,24 +97,24 @@ func TestSavedViewUpdateWithOptionalParams(t *testing.T) {
 	_, err := client.SavedViews.Update(
 		context.TODO(),
 		0,
-		paperlessnix.SavedViewUpdateParams{
+		paperlessngx.SavedViewUpdateParams{
 			DisplayFields: map[string]interface{}{},
-			DisplayMode:   paperlessnix.SavedViewUpdateParamsDisplayModeTable,
-			FilterRules: []paperlessnix.SavedViewFilterRuleParam{{
+			DisplayMode:   paperlessngx.SavedViewUpdateParamsDisplayModeTable,
+			FilterRules: []paperlessngx.SavedViewFilterRuleParam{{
 				RuleType: 0,
-				Value:    paperlessnix.String("value"),
+				Value:    paperlessngx.String("value"),
 			}},
-			Name:            paperlessnix.String("x"),
-			Owner:           paperlessnix.Int(0),
-			PageSize:        paperlessnix.Int(1),
-			ShowInSidebar:   paperlessnix.Bool(true),
-			ShowOnDashboard: paperlessnix.Bool(true),
-			SortField:       paperlessnix.String("sort_field"),
-			SortReverse:     paperlessnix.Bool(true),
+			Name:            paperlessngx.String("x"),
+			Owner:           paperlessngx.Int(0),
+			PageSize:        paperlessngx.Int(1),
+			ShowInSidebar:   paperlessngx.Bool(true),
+			ShowOnDashboard: paperlessngx.Bool(true),
+			SortField:       paperlessngx.String("sort_field"),
+			SortReverse:     paperlessngx.Bool(true),
 		},
 	)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -131,18 +131,18 @@ func TestSavedViewListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
 		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.SavedViews.List(context.TODO(), paperlessnix.SavedViewListParams{
-		Page:     paperlessnix.Int(0),
-		PageSize: paperlessnix.Int(0),
+	_, err := client.SavedViews.List(context.TODO(), paperlessngx.SavedViewListParams{
+		Page:     paperlessngx.Int(0),
+		PageSize: paperlessngx.Int(0),
 	})
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -159,7 +159,7 @@ func TestSavedViewDelete(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -167,7 +167,7 @@ func TestSavedViewDelete(t *testing.T) {
 	)
 	err := client.SavedViews.Delete(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

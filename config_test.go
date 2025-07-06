@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package paperlessnix_test
+package paperlessngx_test
 
 import (
 	"bytes"
@@ -24,7 +24,7 @@ func TestConfigGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -32,7 +32,7 @@ func TestConfigGet(t *testing.T) {
 	)
 	_, err := client.Config.Get(context.TODO())
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -49,7 +49,7 @@ func TestConfigUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -58,37 +58,37 @@ func TestConfigUpdateWithOptionalParams(t *testing.T) {
 	_, err := client.Config.Update(
 		context.TODO(),
 		0,
-		paperlessnix.ConfigUpdateParams{
+		paperlessngx.ConfigUpdateParams{
 			BarcodeTagMapping:        map[string]interface{}{},
 			UserArgs:                 map[string]interface{}{},
 			AppLogo:                  io.Reader(bytes.NewBuffer([]byte("some file contents"))),
-			AppTitle:                 paperlessnix.String("app_title"),
-			BarcodeAsnPrefix:         paperlessnix.String("barcode_asn_prefix"),
-			BarcodeDpi:               paperlessnix.Int(1),
-			BarcodeEnableAsn:         paperlessnix.Bool(true),
-			BarcodeEnableTag:         paperlessnix.Bool(true),
-			BarcodeEnableTiffSupport: paperlessnix.Bool(true),
-			BarcodeMaxPages:          paperlessnix.Int(1),
-			BarcodeRetainSplitPages:  paperlessnix.Bool(true),
-			BarcodeString:            paperlessnix.String("barcode_string"),
-			BarcodeUpscale:           paperlessnix.Float(1),
-			BarcodesEnabled:          paperlessnix.Bool(true),
-			ColorConversionStrategy:  paperlessnix.ConfigUpdateParamsColorConversionStrategyLeaveColorUnchanged,
-			Deskew:                   paperlessnix.Bool(true),
-			ImageDpi:                 paperlessnix.Int(1),
-			Language:                 paperlessnix.String("language"),
-			MaxImagePixels:           paperlessnix.Float(0),
-			Mode:                     paperlessnix.ConfigUpdateParamsModeSkip,
-			OutputType:               paperlessnix.ConfigUpdateParamsOutputTypePdf,
-			Pages:                    paperlessnix.Int(1),
-			RotatePages:              paperlessnix.Bool(true),
-			RotatePagesThreshold:     paperlessnix.Float(0),
-			SkipArchiveFile:          paperlessnix.ConfigUpdateParamsSkipArchiveFileNever,
-			UnpaperClean:             paperlessnix.ConfigUpdateParamsUnpaperCleanClean,
+			AppTitle:                 paperlessngx.String("app_title"),
+			BarcodeAsnPrefix:         paperlessngx.String("barcode_asn_prefix"),
+			BarcodeDpi:               paperlessngx.Int(1),
+			BarcodeEnableAsn:         paperlessngx.Bool(true),
+			BarcodeEnableTag:         paperlessngx.Bool(true),
+			BarcodeEnableTiffSupport: paperlessngx.Bool(true),
+			BarcodeMaxPages:          paperlessngx.Int(1),
+			BarcodeRetainSplitPages:  paperlessngx.Bool(true),
+			BarcodeString:            paperlessngx.String("barcode_string"),
+			BarcodeUpscale:           paperlessngx.Float(1),
+			BarcodesEnabled:          paperlessngx.Bool(true),
+			ColorConversionStrategy:  paperlessngx.ConfigUpdateParamsColorConversionStrategyLeaveColorUnchanged,
+			Deskew:                   paperlessngx.Bool(true),
+			ImageDpi:                 paperlessngx.Int(1),
+			Language:                 paperlessngx.String("language"),
+			MaxImagePixels:           paperlessngx.Float(0),
+			Mode:                     paperlessngx.ConfigUpdateParamsModeSkip,
+			OutputType:               paperlessngx.ConfigUpdateParamsOutputTypePdf,
+			Pages:                    paperlessngx.Int(1),
+			RotatePages:              paperlessngx.Bool(true),
+			RotatePagesThreshold:     paperlessngx.Float(0),
+			SkipArchiveFile:          paperlessngx.ConfigUpdateParamsSkipArchiveFileNever,
+			UnpaperClean:             paperlessngx.ConfigUpdateParamsUnpaperCleanClean,
 		},
 	)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -105,7 +105,7 @@ func TestConfigDelete(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -113,7 +113,7 @@ func TestConfigDelete(t *testing.T) {
 	)
 	err := client.Config.Delete(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -130,7 +130,7 @@ func TestConfigPatchWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -139,37 +139,37 @@ func TestConfigPatchWithOptionalParams(t *testing.T) {
 	_, err := client.Config.Patch(
 		context.TODO(),
 		0,
-		paperlessnix.ConfigPatchParams{
+		paperlessngx.ConfigPatchParams{
 			AppLogo:                  io.Reader(bytes.NewBuffer([]byte("some file contents"))),
-			AppTitle:                 paperlessnix.String("app_title"),
-			BarcodeAsnPrefix:         paperlessnix.String("barcode_asn_prefix"),
-			BarcodeDpi:               paperlessnix.Int(1),
-			BarcodeEnableAsn:         paperlessnix.Bool(true),
-			BarcodeEnableTag:         paperlessnix.Bool(true),
-			BarcodeEnableTiffSupport: paperlessnix.Bool(true),
-			BarcodeMaxPages:          paperlessnix.Int(1),
-			BarcodeRetainSplitPages:  paperlessnix.Bool(true),
-			BarcodeString:            paperlessnix.String("barcode_string"),
+			AppTitle:                 paperlessngx.String("app_title"),
+			BarcodeAsnPrefix:         paperlessngx.String("barcode_asn_prefix"),
+			BarcodeDpi:               paperlessngx.Int(1),
+			BarcodeEnableAsn:         paperlessngx.Bool(true),
+			BarcodeEnableTag:         paperlessngx.Bool(true),
+			BarcodeEnableTiffSupport: paperlessngx.Bool(true),
+			BarcodeMaxPages:          paperlessngx.Int(1),
+			BarcodeRetainSplitPages:  paperlessngx.Bool(true),
+			BarcodeString:            paperlessngx.String("barcode_string"),
 			BarcodeTagMapping:        map[string]interface{}{},
-			BarcodeUpscale:           paperlessnix.Float(1),
-			BarcodesEnabled:          paperlessnix.Bool(true),
-			ColorConversionStrategy:  paperlessnix.ConfigPatchParamsColorConversionStrategyLeaveColorUnchanged,
-			Deskew:                   paperlessnix.Bool(true),
-			ImageDpi:                 paperlessnix.Int(1),
-			Language:                 paperlessnix.String("language"),
-			MaxImagePixels:           paperlessnix.Float(0),
-			Mode:                     paperlessnix.ConfigPatchParamsModeSkip,
-			OutputType:               paperlessnix.ConfigPatchParamsOutputTypePdf,
-			Pages:                    paperlessnix.Int(1),
-			RotatePages:              paperlessnix.Bool(true),
-			RotatePagesThreshold:     paperlessnix.Float(0),
-			SkipArchiveFile:          paperlessnix.ConfigPatchParamsSkipArchiveFileNever,
-			UnpaperClean:             paperlessnix.ConfigPatchParamsUnpaperCleanClean,
+			BarcodeUpscale:           paperlessngx.Float(1),
+			BarcodesEnabled:          paperlessngx.Bool(true),
+			ColorConversionStrategy:  paperlessngx.ConfigPatchParamsColorConversionStrategyLeaveColorUnchanged,
+			Deskew:                   paperlessngx.Bool(true),
+			ImageDpi:                 paperlessngx.Int(1),
+			Language:                 paperlessngx.String("language"),
+			MaxImagePixels:           paperlessngx.Float(0),
+			Mode:                     paperlessngx.ConfigPatchParamsModeSkip,
+			OutputType:               paperlessngx.ConfigPatchParamsOutputTypePdf,
+			Pages:                    paperlessngx.Int(1),
+			RotatePages:              paperlessngx.Bool(true),
+			RotatePagesThreshold:     paperlessngx.Float(0),
+			SkipArchiveFile:          paperlessngx.ConfigPatchParamsSkipArchiveFileNever,
+			UnpaperClean:             paperlessngx.ConfigPatchParamsUnpaperCleanClean,
 			UserArgs:                 map[string]interface{}{},
 		},
 	)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -186,7 +186,7 @@ func TestConfigGetByID(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := paperlessnix.NewClient(
+	client := paperlessngx.NewClient(
 		option.WithBaseURL(baseURL),
 		option.WithUsername("My Username"),
 		option.WithPassword("My Password"),
@@ -194,7 +194,7 @@ func TestConfigGetByID(t *testing.T) {
 	)
 	_, err := client.Config.GetByID(context.TODO(), 0)
 	if err != nil {
-		var apierr *paperlessnix.Error
+		var apierr *paperlessngx.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
