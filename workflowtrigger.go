@@ -11,6 +11,7 @@ import (
 
 	"github.com/defasdefbe/go-paperless-ngx/internal/apijson"
 	"github.com/defasdefbe/go-paperless-ngx/internal/apiquery"
+	shimjson "github.com/defasdefbe/go-paperless-ngx/internal/encoding/json"
 	"github.com/defasdefbe/go-paperless-ngx/internal/requestconfig"
 	"github.com/defasdefbe/go-paperless-ngx/option"
 	"github.com/defasdefbe/go-paperless-ngx/packages/param"
@@ -301,7 +302,7 @@ type WorkflowTriggerNewParams struct {
 }
 
 func (r WorkflowTriggerNewParams) MarshalJSON() (data []byte, err error) {
-	return json.Marshal(r.WorkflowTriggerRequest)
+	return shimjson.Marshal(r.WorkflowTriggerRequest)
 }
 func (r *WorkflowTriggerNewParams) UnmarshalJSON(data []byte) error {
 	return json.Unmarshal(data, &r.WorkflowTriggerRequest)
