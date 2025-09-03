@@ -1,6 +1,10 @@
 # Paperless Ngx Go API Library
 
+<!-- x-release-please-start-version -->
+
 <a href="https://pkg.go.dev/github.com/defasdefbe/go-paperless-ngx"><img src="https://pkg.go.dev/badge/github.com/defasdefbe/go-paperless-ngx.svg" alt="Go Reference"></a>
+
+<!-- x-release-please-end -->
 
 The Paperless Ngx Go library provides convenient access to the [Paperless Ngx REST API](https://docs.paperless-ngx.com/api/)
 from applications written in Go.
