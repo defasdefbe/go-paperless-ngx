@@ -1,6 +1,10 @@
 # Paperless Ngx Go API Library
 
-<a href="https://pkg.go.dev/github.com/stainless-sdks/paperless-nix-go"><img src="https://pkg.go.dev/badge/github.com/stainless-sdks/paperless-nix-go.svg" alt="Go Reference"></a>
+<!-- x-release-please-start-version -->
+
+<a href="https://pkg.go.dev/github.com/defasdefbe/go-paperless-ngx"><img src="https://pkg.go.dev/badge/github.com/defasdefbe/go-paperless-ngx.svg" alt="Go Reference"></a>
+
+<!-- x-release-please-end -->
 
 The Paperless Ngx Go library provides convenient access to the [Paperless Ngx REST API](https://docs.paperless-ngx.com/api/)
 from applications written in Go.
@@ -9,17 +13,25 @@ It is generated with [Stainless](https://www.stainless.com/).
 
 ## Installation
 
+<!-- x-release-please-start-version -->
+
 ```go
 import (
-	"github.com/stainless-sdks/paperless-nix-go" // imported as paperlessngx
+	"github.com/defasdefbe/go-paperless-ngx" // imported as paperlessngx
 )
 ```
 
+<!-- x-release-please-end -->
+
 Or to pin the version:
 
+<!-- x-release-please-start-version -->
+
 ```sh
-go get -u 'github.com/stainless-sdks/paperless-nix-go@v0.0.1-alpha.0'
+go get -u 'github.com/defasdefbe/go-paperless-ngx@v0.1.0-alpha.1'
 ```
+
+<!-- x-release-please-end -->
 
 ## Requirements
 
@@ -36,8 +48,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/stainless-sdks/paperless-nix-go"
-	"github.com/stainless-sdks/paperless-nix-go/option"
+	"github.com/defasdefbe/go-paperless-ngx"
+	"github.com/defasdefbe/go-paperless-ngx/option"
 )
 
 func main() {
@@ -269,7 +281,7 @@ client.BulkEditObjects.New(context.TODO(), ...,
 
 The request option `option.WithDebugLog(nil)` may be helpful while debugging.
 
-See the [full list of request options](https://pkg.go.dev/github.com/stainless-sdks/paperless-nix-go/option).
+See the [full list of request options](https://pkg.go.dev/github.com/defasdefbe/go-paperless-ngx/option).
 
 ### Pagination
 
@@ -515,7 +527,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/paperless-nix-go/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/defasdefbe/go-paperless-ngx/issues) with questions, bugs, or suggestions.
 
 ## Contributing
 

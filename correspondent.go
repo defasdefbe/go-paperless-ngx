@@ -10,12 +10,13 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/stainless-sdks/paperless-nix-go/internal/apijson"
-	"github.com/stainless-sdks/paperless-nix-go/internal/apiquery"
-	"github.com/stainless-sdks/paperless-nix-go/internal/requestconfig"
-	"github.com/stainless-sdks/paperless-nix-go/option"
-	"github.com/stainless-sdks/paperless-nix-go/packages/param"
-	"github.com/stainless-sdks/paperless-nix-go/packages/respjson"
+	"github.com/defasdefbe/go-paperless-ngx/internal/apijson"
+	"github.com/defasdefbe/go-paperless-ngx/internal/apiquery"
+	shimjson "github.com/defasdefbe/go-paperless-ngx/internal/encoding/json"
+	"github.com/defasdefbe/go-paperless-ngx/internal/requestconfig"
+	"github.com/defasdefbe/go-paperless-ngx/option"
+	"github.com/defasdefbe/go-paperless-ngx/packages/param"
+	"github.com/defasdefbe/go-paperless-ngx/packages/respjson"
 )
 
 // CorrespondentService contains methods and other services that help with
@@ -297,7 +298,7 @@ type CorrespondentNewParams struct {
 }
 
 func (r CorrespondentNewParams) MarshalJSON() (data []byte, err error) {
-	return json.Marshal(r.CorrespondentRequest)
+	return shimjson.Marshal(r.CorrespondentRequest)
 }
 func (r *CorrespondentNewParams) UnmarshalJSON(data []byte) error {
 	return json.Unmarshal(data, &r.CorrespondentRequest)

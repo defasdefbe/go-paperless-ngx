@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"net/http/httputil"
 
-	"github.com/stainless-sdks/paperless-nix-go/internal/apijson"
-	"github.com/stainless-sdks/paperless-nix-go/packages/respjson"
+	"github.com/defasdefbe/go-paperless-ngx/internal/apijson"
+	"github.com/defasdefbe/go-paperless-ngx/packages/respjson"
 )
 
 // Error represents an error that originates from the API, i.e. when a request is

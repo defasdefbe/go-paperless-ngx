@@ -8,13 +8,13 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/paperless-nix-go"
-	"github.com/stainless-sdks/paperless-nix-go/internal/testutil"
-	"github.com/stainless-sdks/paperless-nix-go/option"
+	"github.com/defasdefbe/go-paperless-ngx"
+	"github.com/defasdefbe/go-paperless-ngx/internal/testutil"
+	"github.com/defasdefbe/go-paperless-ngx/option"
 )
 
 func TestDocumentNoteNewWithOptionalParams(t *testing.T) {
-	t.Skip("skipped: tests are disabled for the time being")
+	t.Skip("Prism tests are disabled")
 	baseURL := "http://localhost:4010"
 	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
 		baseURL = envURL
@@ -48,7 +48,7 @@ func TestDocumentNoteNewWithOptionalParams(t *testing.T) {
 }
 
 func TestDocumentNoteListWithOptionalParams(t *testing.T) {
-	t.Skip("skipped: tests are disabled for the time being")
+	t.Skip("Prism tests are disabled")
 	baseURL := "http://localhost:4010"
 	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
 		baseURL = envURL
@@ -81,7 +81,7 @@ func TestDocumentNoteListWithOptionalParams(t *testing.T) {
 }
 
 func TestDocumentNoteDeleteWithOptionalParams(t *testing.T) {
-	t.Skip("skipped: tests are disabled for the time being")
+	t.Skip("Prism tests are disabled")
 	baseURL := "http://localhost:4010"
 	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
 		baseURL = envURL

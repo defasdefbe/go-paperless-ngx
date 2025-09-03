@@ -10,9 +10,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stainless-sdks/paperless-nix-go"
-	"github.com/stainless-sdks/paperless-nix-go/internal"
-	"github.com/stainless-sdks/paperless-nix-go/option"
+	"github.com/defasdefbe/go-paperless-ngx"
+	"github.com/defasdefbe/go-paperless-ngx/internal"
+	"github.com/defasdefbe/go-paperless-ngx/option"
 )
 
 type closureTransport struct {

@@ -2,7 +2,7 @@ package param
 
 import (
 	"encoding/json"
-	"github.com/stainless-sdks/paperless-nix-go/internal/encoding/json/sentinel"
+	"github.com/defasdefbe/go-paperless-ngx/internal/encoding/json/sentinel"
 	"reflect"
 )
 

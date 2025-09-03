@@ -9,12 +9,13 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/stainless-sdks/paperless-nix-go/internal/apijson"
-	"github.com/stainless-sdks/paperless-nix-go/internal/apiquery"
-	"github.com/stainless-sdks/paperless-nix-go/internal/requestconfig"
-	"github.com/stainless-sdks/paperless-nix-go/option"
-	"github.com/stainless-sdks/paperless-nix-go/packages/param"
-	"github.com/stainless-sdks/paperless-nix-go/packages/respjson"
+	"github.com/defasdefbe/go-paperless-ngx/internal/apijson"
+	"github.com/defasdefbe/go-paperless-ngx/internal/apiquery"
+	shimjson "github.com/defasdefbe/go-paperless-ngx/internal/encoding/json"
+	"github.com/defasdefbe/go-paperless-ngx/internal/requestconfig"
+	"github.com/defasdefbe/go-paperless-ngx/option"
+	"github.com/defasdefbe/go-paperless-ngx/packages/param"
+	"github.com/defasdefbe/go-paperless-ngx/packages/respjson"
 )
 
 // WorkflowActionService contains methods and other services that help with
@@ -371,7 +372,7 @@ type WorkflowActionNewParams struct {
 }
 
 func (r WorkflowActionNewParams) MarshalJSON() (data []byte, err error) {
-	return json.Marshal(r.WorkflowActionRequest)
+	return shimjson.Marshal(r.WorkflowActionRequest)
 }
 func (r *WorkflowActionNewParams) UnmarshalJSON(data []byte) error {
 	return json.Unmarshal(data, &r.WorkflowActionRequest)

@@ -9,12 +9,13 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/stainless-sdks/paperless-nix-go/internal/apijson"
-	"github.com/stainless-sdks/paperless-nix-go/internal/apiquery"
-	"github.com/stainless-sdks/paperless-nix-go/internal/requestconfig"
-	"github.com/stainless-sdks/paperless-nix-go/option"
-	"github.com/stainless-sdks/paperless-nix-go/packages/param"
-	"github.com/stainless-sdks/paperless-nix-go/packages/respjson"
+	"github.com/defasdefbe/go-paperless-ngx/internal/apijson"
+	"github.com/defasdefbe/go-paperless-ngx/internal/apiquery"
+	shimjson "github.com/defasdefbe/go-paperless-ngx/internal/encoding/json"
+	"github.com/defasdefbe/go-paperless-ngx/internal/requestconfig"
+	"github.com/defasdefbe/go-paperless-ngx/option"
+	"github.com/defasdefbe/go-paperless-ngx/packages/param"
+	"github.com/defasdefbe/go-paperless-ngx/packages/respjson"
 )
 
 // StoragePathService contains methods and other services that help with
@@ -231,7 +232,7 @@ type StoragePathNewParams struct {
 }
 
 func (r StoragePathNewParams) MarshalJSON() (data []byte, err error) {
-	return json.Marshal(r.StoragePathRequest)
+	return shimjson.Marshal(r.StoragePathRequest)
 }
 func (r *StoragePathNewParams) UnmarshalJSON(data []byte) error {
 	return json.Unmarshal(data, &r.StoragePathRequest)
@@ -356,7 +357,7 @@ type StoragePathTestParams struct {
 }
 
 func (r StoragePathTestParams) MarshalJSON() (data []byte, err error) {
-	return json.Marshal(r.StoragePathRequest)
+	return shimjson.Marshal(r.StoragePathRequest)
 }
 func (r *StoragePathTestParams) UnmarshalJSON(data []byte) error {
 	return json.Unmarshal(data, &r.StoragePathRequest)
